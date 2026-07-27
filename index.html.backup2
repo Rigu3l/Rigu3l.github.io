@@ -130,10 +130,7 @@
     <!-- Hero Section -->
     <section id="home" class="relative min-h-[80vh] flex flex-col items-center justify-center px-4 pt-20">
         <div class="absolute inset-0">
-            <div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-100">
-                <img class="h-full w-full object-cover" 
-                    src="https://images.unsplash.com/photo-1755282464684-6568f7f76b5d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""/>
-            </div>
+            <div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-20"></div>
             <div class="absolute inset-0 -z-10">
                 <svg class="w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
                     <path fill="currentColor" fill-opacity="0.05" d="M0,224C48,213,96,192,144,170.7C192,149,240,128,288,117.3C336,107,384,107,432,117.3C480,128,528,149,576,170.7C624,192,672,213,720,213.3C768,213,816,213,864,197.3C912,182,960,153,1008,138.7C1056,124,1104,124,1152,138.7C1200,153,1248,179,1296,202.7C1344,226,1392,246,1440,256L1440 320L0 320Z"></path>
@@ -306,12 +303,12 @@
             <h2 class="text-3xl font-bold text-center mb-16 gradient-text">Services</h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Frontend Development -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black p-8 rounded-xl hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 p-8 rounded-xl hover-lift transition-all glassmorphism">
                     <div class="flex items-center justify-start mb-4">
                         <i class="fas fa-laptop-code text-2xl text-primary mb-2"></i>
                         <h3 class="text-xl font-semibold ml-3">Frontend Development</h3>
                     </div>
-                    <p class="text-gray-400 dark:text-gray-400 mb-4">
+                    <p class="text-gray-200 dark:text-gray-300 mb-4">
                         Creating responsive and interactive user interfaces with modern frameworks and pixel-perfect designs.
                     </p>
                     <div class="flex items-center space-x-2">
@@ -322,12 +319,12 @@
                     </div>
                 </div>
                 <!-- Backend Development -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black p-8 rounded-xl hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 p-8 rounded-xl hover-lift transition-all glassmorphism">
                     <div class="flex items-center justify-start mb-4">
                         <i class="fas fa-server text-2xl text-primary mb-2"></i>
                         <h3 class="text-xl font-semibold ml-3">Backend Development</h3>
                     </div>
-                    <p class="text-gray-400 dark:text-gray-400 mb-4">
+                    <p class="text-gray-200 dark:text-gray-300 mb-4">
                         Building robust server-side applications and APIs with scalable architecture and secure practices.
                     </p>
                     <div class="flex items-center space-x-2">
@@ -336,13 +333,13 @@
                     </div>
                 </div>
                 <!-- Full Stack Web Development -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black p-8 rounded-xl hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 p-8 rounded-xl hover-lift transition-all glassmorphism">
                     <div class="flex items-center justify-start mb-4">
                         <i class="fas fa-laptop-code text-2xl text-primary mb-2"></i>
                         <i class="fas fa-server text-2xl text-primary mb-2"></i>
                         <h3 class="text-xl font-semibold ml-3">Full Stack Web Development</h3>
                     </div>
-                    <p class="text-gray-200 dark:text-gray-400 mb-4">
+                    <p class="text-gray-200 dark:text-gray-300 mb-4">
                         End-to-end development of web applications, from user interface to server-side logic and database integration.
                     </p>
                     <div class="flex items-center space-x-2">
@@ -353,12 +350,12 @@
                     </div>
                 </div>
                 <!-- Responsive Website Design -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black p-8 rounded-xl hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 p-8 rounded-xl hover-lift transition-all glassmorphism">
                     <div class="flex items-center justify-start mb-4">
                         <i class="fas fa-mobile-alt text-2xl text-primary mb-2"></i>
                         <h3 class="text-xl font-semibold ml-3">Responsive Website Design</h3>
                     </div>
-                    <p class="text-gray-200 dark:text-gray-400 mb-4">
+                    <p class="text-gray-200 dark:text-gray-300 mb-4">
                         Ensuring websites look and function flawlessly across all devices and screen sizes.
                     </p>
                     <div class="flex items-center space-x-2">
@@ -369,12 +366,12 @@
                     </div>
                 </div>
                 <!-- UI/UX Design -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black p-8 rounded-xl hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 p-8 rounded-xl hover-lift transition-all glassmorphism">
                     <div class="flex items-center justify-start mb-4">
                         <i class="fas fa-paint-brush text-2xl text-primary mb-2"></i>
                         <h3 class="text-xl font-semibold ml-3">UI/UX Design</h3>
                     </div>
-                    <p class="text-gray-200 dark:text-gray-400 mb-4">
+                    <p class="text-gray-200 dark:text-gray-300 mb-4">
                         Crafting intuitive and engaging user interfaces with a focus on user experience and accessibility.
                     </p>
                     <div class="flex items-center space-x-2">
@@ -385,12 +382,12 @@
                     </div>
                 </div>
                 <!-- Graphic Design -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black p-8 rounded-xl hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 p-8 rounded-xl hover-lift transition-all glassmorphism">
                     <div class="flex items-center justify-start mb-4">
                         <i class="fas fa-image text-2xl text-primary mb-2"></i>
                         <h3 class="text-xl font-semibold ml-3">Graphic Design</h3>
                     </div>
-                    <p class="text-gray-200 dark:text-gray-400 mb-4">
+                    <p class="text-gray-200 dark:text-gray-300 mb-4">
                         Creating visually appealing graphics for web and print using industry-standard tools.
                     </p>
                     <div class="flex items-center space-x-2">
@@ -410,14 +407,14 @@
             <h2 class="text-3xl font-bold text-center mb-16 gradient-text">Featured Projects</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Project 1 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/800x400?placeholder=Project+1" alt="Project 1" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2">Online Concern System</h3>
-                        <p class="text-gray-200 dark:text-gray-400 mb-3">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Online Concern System</h3>
+                        <p class="text-gray-200 dark:text-gray-300 mb-3">
                             A web-based system for reporting and tracking community concerns and issues.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -433,14 +430,14 @@
                     </div>
                 </div>
                 <!-- Project 2 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/800x400?placeholder=Project+2" alt="Project 2" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2 ">Hotel Management System</h3>
-                        <p class="text-gray-200 dark:text-gray-400 mb-3">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Hotel Management System</h3>
+                        <p class="text-gray-200 dark:text-gray-300 mb-3">
                             A comprehensive hotel management system with booking, inventory, and staff management features.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -455,14 +452,14 @@
                     </div>
                 </div>
                 <!-- Project 3 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/800x400?placeholder=Project+3" alt="Project 3" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2 ">Portfolio Website</h3>
-                        <p class="text-gray-200 dark:text-gray-400 mb-3">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Portfolio Website</h3>
+                        <p class="text-gray-200 dark:text-gray-300 mb-3">
                             A personal portfolio website showcasing skills, projects, and experience.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -478,14 +475,14 @@
                     </div>
                 </div>
                 <!-- Project 4 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/800x400?placeholder=Project+4" alt="Project 4" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2 ">Student Management System</h3>
-                        <p class="text-gray-200 dark:text-gray-400 mb-3">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Student Management System</h3>
+                        <p class="text-gray-200 dark:text-gray-300 mb-3">
                             A system for managing student records, grades, and attendance.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -500,14 +497,14 @@
                     </div>
                 </div>
                 <!-- Project 5 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/800x400?placeholder=Project+5" alt="Project 5" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2 ">Task Management App</h3>
-                        <p class="text-gray-200 dark:text-gray-400 mb-3">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Task Management App</h3>
+                        <p class="text-gray-200 dark:text-gray-300 mb-3">
                             A simple task management application with CRUD operations.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -523,14 +520,14 @@
                     </div>
                 </div>
                 <!-- Project 6 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/800x400?placeholder=Project+6" alt="Project 6" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2 ">E-commerce Platform</h3>
-                        <p class="text-gray-200 dark:text-gray-400 mb-3">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">E-commerce Platform</h3>
+                        <p class="text-gray-200 dark:text-gray-300 mb-3">
                             An online store with product catalog, shopping cart, and payment processing.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -602,69 +599,69 @@
             <h2 class="text-3xl font-bold text-center mb-16 gradient-text">Certificates</h2>
             <div class="grid md:grid-cols-3 gap-6">
                 <!-- Certificate 1 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/300x200?placeholder=Certificate+1" alt="Certificate 1" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4 text-center">
-                        <h3 class="text-lg font-semibold mb-2">Certificate Title 1</h3>
-                        <p class="text-gray-200 dark:text-gray-400">NetAcad • 2023</p>
+                        <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">Certificate Title 1</h3>
+                        <p class="text-gray-200 dark:text-gray-300">Issuing Organization • 2023</p>
                     </div>
                 </div>
                 <!-- Certificate 2 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/300x200?placeholder=Certificate+2" alt="Certificate 2" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4 text-center">
-                        <h3 class="text-lg font-semibold mb-2">Certificate Title 2</h3>
-                        <p class="text-gray-200 dark:text-gray-400">Graphic Design Seminar • 2022</p>
+                        <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">Certificate Title 2</h3>
+                        <p class="text-gray-200 dark:text-gray-300">Issuing Organization • 2022</p>
                     </div>
                 </div>
                 <!-- Certificate 3 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/300x200?placeholder=Certificate+3" alt="Certificate 3" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4 text-center">
-                        <h3 class="text-lg font-semibold mb-2">Certificate Title 3</h3>
-                        <p class="text-gray-200 dark:text-gray-400">Cyber Security Seminar • 2021</p>
+                        <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">Certificate Title 3</h3>
+                        <p class="text-gray-200 dark:text-gray-300">Issuing Organization • 2021</p>
                     </div>
                 </div>
                 <!-- Certificate 4 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/300x200?placeholder=Certificate+4" alt="Certificate 4" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4 text-center">
-                        <h3 class="text-lg font-semibold mb-2">Certificate Title 4</h3>
-                        <p class="text-gray-200 dark:text-gray-400">Web Development Seminar • 2020</p>
+                        <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">Certificate Title 4</h3>
+                        <p class="text-gray-200 dark:text-gray-300">Issuing Organization • 2020</p>
                     </div>
                 </div>
                 <!-- Certificate 5 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/300x200?placeholder=Certificate+5" alt="Certificate 5" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4 text-center">
-                        <h3 class="text-lg font-semibold mb-2">Certificate Title 5</h3>
-                        <p class="text-gray-200 dark:text-gray-400">Game Development Seminar • 2019</p>
+                        <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">Certificate Title 5</h3>
+                        <p class="text-gray-200 dark:text-gray-300">Issuing Organization • 2019</p>
                     </div>
                 </div>
                 <!-- Certificate 6 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/300x200?placeholder=Certificate+6" alt="Certificate 6" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4 text-center">
-                        <h3 class="text-lg font-semibold mb-2">Certificate Title 6</h3>
-                        <p class="text-gray-200 dark:text-gray-400">Issuing Organization • 2018</p>
+                        <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">Certificate Title 6</h3>
+                        <p class="text-gray-200 dark:text-gray-300">Issuing Organization • 2018</p>
                     </div>
                 </div>
             </div>
