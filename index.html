@@ -4,89 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RJ - Junior Full Stack Developer</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#829ab1',
+                        secondary: '#486581',
+                        accent: '#bcccdc',
+                        card: '#102a43',
+                        gray: {
+                            50: '#102a43',
+                            100: '#f0f4f8',
+                            200: '#f0f4f8',
+                            300: '#bcccdc',
+                            400: '#829ab1',
+                            500: '#486581',
+                            600: '#486581',
+                            700: '#486581',
+                            800: '#102a43',
+                            900: '#102a43'
+                        }
+                    }
+                }
+            }
+        };
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        :root {
-            --primary: #4f46e5;
-            --secondary: #6366f1;
-            --accent: #8b5cf6;
-            --dark-bg: #111827;
-            --dark-card: #1f2937;
-            --light-bg: #f9fafb;
-            --light-card: #ffffff;
-        }
-        .dark {
-            --bg-color: var(--dark-bg);
-            --card-bg: var(--dark-card);
-            --text-primary: #f9fafb;
-            --text-secondary: #d1d5db;
-        }
-        .light {
-            --bg-color: var(--light-bg);
-            --card-bg: var(--light-card);
-            --text-primary: #111827;
-            --text-secondary: #4b5563;
-        }
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: 'Poppins', sans-serif;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .glassmorphism {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .dark .glassmorphism {
-            background: rgba(31, 41, 55, 0.3);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(75, 85, 99, 0.2);
-        }
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .hover-lift:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .dark .hover-lift:hover {
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
-        }
-        .gradient-text {
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .animation-delay-200 {
-            animation-delay: 200ms;
-        }
-        .animation-delay-400 {
-            animation-delay: 400ms;
-        }
-        .animation-delay-600 {
-            animation-delay: 600ms;
-        }
-        .animation-delay-800 {
-            animation-delay: 800ms;
-        }
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .fade-in-up.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="dark">
+<body>
     <!-- Navbar -->
-    <nav class="bg-gray-800/50 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+    <nav class="bg-gray-800/50 backdrop-blur-md border-b border-gray-200 border-gray-700 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
@@ -95,34 +46,34 @@
                     </a>
                     <div class="hidden md:block">
                         <div class="flex space-x-4">
-                            <a href="#home" class="text-gray-300 hover:text-primary font-medium transition-dark">Home</a>
-                            <a href="#about" class="text-gray-300 hover:text-primary font-medium transition-dark">About</a>
-                            <a href="#skills" class="text-gray-300 hover:text-primary font-medium transition-dark">Skills</a>
-                            <a href="#services" class="text-gray-300 hover:text-primary font-medium transition-dark">Services</a>
-                            <a href="#projects" class="text-gray-300 hover:text-primary font-medium transition-dark">Projects</a>
-                            <a href="#experience" class="text-gray-300 hover:text-primary font-medium transition-dark">Experience</a>
-                            <a href="#certificates" class="text-gray-300 hover:text-primary font-medium transition-dark">Certificates</a>
-                            <a href="#contact" class="text-gray-300 hover:text-primary font-medium transition-dark">Contact</a>
+                            <a href="#home" class="text-gray-300 hover:text-primary font-medium transition-colors">Home</a>
+                            <a href="#about" class="text-gray-300 hover:text-primary font-medium transition-colors">About</a>
+                            <a href="#skills" class="text-gray-300 hover:text-primary font-medium transition-colors">Skills</a>
+                            <a href="#services" class="text-gray-300 hover:text-primary font-medium transition-colors">Services</a>
+                            <a href="#projects" class="text-gray-300 hover:text-primary font-medium transition-colors">Projects</a>
+                            <a href="#experience" class="text-gray-300 hover:text-primary font-medium transition-colors">Experience</a>
+                            <a href="#certificates" class="text-gray-300 hover:text-primary font-medium transition-colors">Certificates</a>
+                            <a href="#contact" class="text-gray-300 hover:text-primary font-medium transition-colors">Contact</a>
                         </div>
                     </div>
                 </div>
                 <div class="flex items-center space-x-3">
                     <!-- Mobile Menu Button -->
-                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" aria-label="Open menu">
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded hover:bg-gray-100 hover:bg-gray-700 transition-colors" aria-label="Open menu">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
             </div>
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden space-y-1 pt-2 pb-3">
-                <a href="#home" class="block px-3 py-2 rounded text-base font-medium text-gray-700 hover:bg-gray-100 dark:bg-gray-600 dark:text-gray-300">Home</a>
-                <a href="#about" class="block px-3 py-2 rounded text-base font-medium text-gray-700 hover:bg-gray-100 dark:bg-gray-600 dark:text-gray-300">About</a>
-                <a href="#skills" class="block px-3 py-2 rounded text-base font-medium text-gray-700 hover:bg-gray-100 dark:bg-gray-600 dark:text-gray-300">Skills</a>
-                <a href="#services" class="block px-3 py-2 rounded text-base font-medium text-gray-700 hover:bg-gray-100 dark:bg-gray-600 dark:text-gray-300">Services</a>
-                <a href="#projects" class="block px-3 py-2 rounded text-base font-medium text-gray-700 hover:bg-gray-100 dark:bg-gray-600 dark:text-gray-300">Projects</a>
-                <a href="#experience" class="block px-3 py-2 rounded text-base font-medium text-gray-700 hover:bg-gray-100 dark:bg-gray-600 dark:text-gray-300">Experience</a>
-                <a href="#certificates" class="block px-3 py-2 rounded text-base font-medium text-gray-700 hover:bg-gray-100 dark:bg-gray-600 dark:text-gray-300">Certificates</a>
-                <a href="#contact" class="block px-3 py-2 rounded text-base font-medium text-gray-700 hover:bg-gray-100 dark:bg-gray-600 dark:text-gray-300">Contact</a>
+                <a href="#home" class="block px-3 py-2 rounded text-base font-medium text-gray-700 hover:bg-gray-100 bg-gray-600 text-gray-300">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded text-base font-medium text-gray-700 hover:bg-gray-100 bg-gray-600 text-gray-300">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded text-base font-medium text-gray-700 hover:bg-gray-100 bg-gray-600 text-gray-300">Skills</a>
+                <a href="#services" class="block px-3 py-2 rounded text-base font-medium text-gray-700 hover:bg-gray-100 bg-gray-600 text-gray-300">Services</a>
+                <a href="#projects" class="block px-3 py-2 rounded text-base font-medium text-gray-700 hover:bg-gray-100 bg-gray-600 text-gray-300">Projects</a>
+                <a href="#experience" class="block px-3 py-2 rounded text-base font-medium text-gray-700 hover:bg-gray-100 bg-gray-600 text-gray-300">Experience</a>
+                <a href="#certificates" class="block px-3 py-2 rounded text-base font-medium text-gray-700 hover:bg-gray-100 bg-gray-600 text-gray-300">Certificates</a>
+                <a href="#contact" class="block px-3 py-2 rounded text-base font-medium text-gray-700 hover:bg-gray-100 bg-gray-600 text-gray-300">Contact</a>
             </div>
         </div>
     </nav>
@@ -144,10 +95,10 @@
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 gradient-text">
                 RJ
             </h1>
-            <p class="text-xl md:text-2xl mb-6 text-gray-200 dark:text-gray-300 max-w-xl">
+            <p class="text-xl md:text-2xl mb-6 text-gray-200 text-gray-300 max-w-xl">
                 Junior Full Stack Developer
             </p>
-            <p class="text-lg mb-8 text-gray-300 dark:text-gray-400 max-w-xl">
+            <p class="text-lg mb-8 text-gray-300 text-gray-400 max-w-xl">
                 I build responsive, user-friendly, and modern web applications while continuously expanding my knowledge in software development and UI/UX design.
             </p>
             <div class="flex justify-center space-x-4 flex-wrap">
@@ -162,25 +113,25 @@
     </section>
 
     <!-- About Me -->
-    <section id="about" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="about" class="py-20 bg-gray-50 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-12 gradient-text">About Me</h2>
             <div class="grid md:grid-cols-2 gap-12 items-start">
                 <div class="space-y-6">
-                    <p class="text-lg text-gray-200 dark:text-gray-300 leading-relaxed">
+                    <p class="text-lg text-gray-200 text-gray-300 leading-relaxed">
                         Passionate about crafting elegant and functional web applications, I specialize in full-stack development with a keen eye for UI/UX design. My journey in technology has been driven by curiosity and a commitment to continuous learning.
                     </p>
-                    <p class="text-lg text-gray-200 dark:text-gray-300 leading-relaxed">
+                    <p class="text-lg text-gray-200 text-gray-300 leading-relaxed">
                         With experience in both frontend and backend technologies, I bring a holistic approach to problem-solving, ensuring seamless integration between user experience and server-side logic.
                     </p>
-                    <p class="text-lg text-gray-200 dark:text-gray-300 leading-relaxed">
+                    <p class="text-lg text-gray-200 text-gray-300 leading-relaxed">
                         I thrive in collaborative environments, adapt quickly to new challenges, and possess strong communication skills that enable effective teamwork.
                     </p>
                 </div>
                 <div class="relative">
                     <div class="w-full h-96 bg-gradient-to-r from-primary to-secondary rounded-xl overflow-hidden shadow-lg hover-lift">
                         <!-- Placeholder for developer illustration -->
-                        <div class="absolute inset-0 flex items-center justify-center bg-gray-800/50 backdrop-blur-md dark:bg-dark-card/50">
+                        <div class="absolute inset-0 flex items-center justify-center bg-gray-800/50 backdrop-blur-md bg-card/50">
                             <i class="fas fa-code text-6xl text-white/opacity-90"></i>
                         </div>
                     </div>
@@ -190,7 +141,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-white dark:bg-gray-900">
+    <section id="skills" class="py-20 bg-gray-900 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-16 gradient-text">Skills</h2>
             <div class="space-y-12">
@@ -198,27 +149,27 @@
                 <div>
                     <h3 class="text-2xl font-semibold mb-6 gradient-text">Frontend Development</h3>
                     <div class="grid md:grid-cols-2 gap-6">
-                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover-lift transition-all">
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 bg-gray-800 rounded-lg hover-lift transition-all">
                             <i class="fab fa-html5 text-primary text-2xl"></i>
                             <span>HTML5</span>
                         </div>
-                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover-lift transition-all">
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 bg-gray-800 rounded-lg hover-lift transition-all">
                             <i class="fab fa-css3-alt text-primary text-2xl"></i>
                             <span>CSS3</span>
                         </div>
-                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover-lift transition-all">
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 bg-gray-800 rounded-lg hover-lift transition-all">
                             <i class="fab fa-js-square text-primary text-2xl"></i>
                             <span>JavaScript (ES6+)</span>
                         </div>
-                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover-lift transition-all">
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 bg-gray-800 rounded-lg hover-lift transition-all">
                             <i class="fab fa-react text-primary text-2xl"></i>
                             <span>React.js</span>
                         </div>
-                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover-lift transition-all">
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 bg-gray-800 rounded-lg hover-lift transition-all">
                             <i class="fab fa-angular text-primary text-2xl"></i>
                             <span>AngularJS</span>
                         </div>
-                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover-lift transition-all">
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 bg-gray-800 rounded-lg hover-lift transition-all">
                             <i class="fab fa-tailwindcss text-primary text-2xl"></i>
                             <span>Tailwind CSS</span>
                         </div>
@@ -228,11 +179,11 @@
                 <div>
                     <h3 class="text-2xl font-semibold mb-6 gradient-text">Backend Development</h3>
                     <div class="grid md:grid-cols-2 gap-6">
-                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover-lift transition-all">
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 bg-gray-800 rounded-lg hover-lift transition-all">
                             <i class="fab fa-php text-primary text-2xl"></i>
                             <span>PHP</span>
                         </div>
-                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover-lift transition-all">
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 bg-gray-800 rounded-lg hover-lift transition-all">
                             <i class="fab fa.java text-primary text-2xl"></i>
                             <span>Java</span>
                         </div>
@@ -242,19 +193,19 @@
                 <div>
                     <h3 class="text-2xl font-semibold mb-6 gradient-text">Programming Languages</h3>
                     <div class="grid md:grid-cols-3 gap-6">
-                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover-lift transition-all">
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 bg-gray-800 rounded-lg hover-lift transition-all">
                             <i class="fab fa-php text-primary text-2xl"></i>
                             <span>PHP</span>
                         </div>
-                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover-lift transition-all">
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 bg-gray-800 rounded-lg hover-lift transition-all">
                             <i class="fab fa-js-square text-primary text-2xl"></i>
                             <span>JavaScript</span>
                         </div>
-                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover-lift transition-all">
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 bg-gray-800 rounded-lg hover-lift transition-all">
                             <i class="fab fa.java text-primary text-2xl"></i>
                             <span>Java</span>
                         </div>
-                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover-lift transition-all">
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 bg-gray-800 rounded-lg hover-lift transition-all">
                             <i class="fas fa-code text-primary text-2xl"></i>
                             <span>C</span>
                         </div>
@@ -264,15 +215,15 @@
                 <div>
                     <h3 class="text-2xl font-semibold mb-6 gradient-text">Design & Prototyping</h3>
                     <div class="grid md:grid-cols-3 gap-6">
-                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover-lift transition-all">
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 bg-gray-800 rounded-lg hover-lift transition-all">
                             <i class="fab fa-canva text-primary text-2xl"></i>
                             <span>Canva</span>
                         </div>
-                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover-lift transition-all">
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 bg-gray-800 rounded-lg hover-lift transition-all">
                             <i class="fab fa-figma text-primary text-2xl"></i>
                             <span>Figma</span>
                         </div>
-                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover-lift transition-all">
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 bg-gray-800 rounded-lg hover-lift transition-all">
                             <i class="fas fa-searchengin text-primary text-2xl"></i>
                             <span>Framer</span>
                         </div>
@@ -282,15 +233,15 @@
                 <div>
                     <h3 class="text-2xl font-semibold mb-6 gradient-text">Tools & Technologies</h3>
                     <div class="grid md:grid-cols-3 gap-6">
-                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover-lift transition-all">
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 bg-gray-800 rounded-lg hover-lift transition-all">
                             <i class="fas fa-database text-primary text-2xl"></i>
                             <span>MySQL</span>
                         </div>
-                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover-lift transition-all">
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 bg-gray-800 rounded-lg hover-lift transition-all">
                             <i class="fab fa-git-alt text-primary text-2xl"></i>
                             <span>Git</span>
                         </div>
-                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover-lift transition-all">
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 bg-gray-800 rounded-lg hover-lift transition-all">
                             <i class="fab fa-node-js text-primary text-2xl"></i>
                             <span>Node.js</span>
                         </div>
@@ -301,17 +252,17 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="services" class="py-20 bg-gray-50 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-16 gradient-text">Services</h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Frontend Development -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black p-8 rounded-xl hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 bg-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:text-gray-100 p-8 rounded-xl hover-lift transition-all glassmorphism">
                     <div class="flex items-center justify-start mb-4">
                         <i class="fas fa-laptop-code text-2xl text-primary mb-2"></i>
                         <h3 class="text-xl font-semibold ml-3">Frontend Development</h3>
                     </div>
-                    <p class="text-gray-400 dark:text-gray-400 mb-4">
+                    <p class="text-gray-400 text-gray-400 mb-4">
                         Creating responsive and interactive user interfaces with modern frameworks and pixel-perfect designs.
                     </p>
                     <div class="flex items-center space-x-2">
@@ -322,12 +273,12 @@
                     </div>
                 </div>
                 <!-- Backend Development -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black p-8 rounded-xl hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 bg-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:text-gray-100 p-8 rounded-xl hover-lift transition-all glassmorphism">
                     <div class="flex items-center justify-start mb-4">
                         <i class="fas fa-server text-2xl text-primary mb-2"></i>
                         <h3 class="text-xl font-semibold ml-3">Backend Development</h3>
                     </div>
-                    <p class="text-gray-400 dark:text-gray-400 mb-4">
+                    <p class="text-gray-400 text-gray-400 mb-4">
                         Building robust server-side applications and APIs with scalable architecture and secure practices.
                     </p>
                     <div class="flex items-center space-x-2">
@@ -336,13 +287,13 @@
                     </div>
                 </div>
                 <!-- Full Stack Web Development -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black p-8 rounded-xl hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 bg-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:text-gray-100 p-8 rounded-xl hover-lift transition-all glassmorphism">
                     <div class="flex items-center justify-start mb-4">
                         <i class="fas fa-laptop-code text-2xl text-primary mb-2"></i>
                         <i class="fas fa-server text-2xl text-primary mb-2"></i>
                         <h3 class="text-xl font-semibold ml-3">Full Stack Web Development</h3>
                     </div>
-                    <p class="text-gray-200 dark:text-gray-400 mb-4">
+                    <p class="text-gray-200 text-gray-400 mb-4">
                         End-to-end development of web applications, from user interface to server-side logic and database integration.
                     </p>
                     <div class="flex items-center space-x-2">
@@ -353,12 +304,12 @@
                     </div>
                 </div>
                 <!-- Responsive Website Design -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black p-8 rounded-xl hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 bg-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:text-gray-100 p-8 rounded-xl hover-lift transition-all glassmorphism">
                     <div class="flex items-center justify-start mb-4">
                         <i class="fas fa-mobile-alt text-2xl text-primary mb-2"></i>
                         <h3 class="text-xl font-semibold ml-3">Responsive Website Design</h3>
                     </div>
-                    <p class="text-gray-200 dark:text-gray-400 mb-4">
+                    <p class="text-gray-200 text-gray-400 mb-4">
                         Ensuring websites look and function flawlessly across all devices and screen sizes.
                     </p>
                     <div class="flex items-center space-x-2">
@@ -369,12 +320,12 @@
                     </div>
                 </div>
                 <!-- UI/UX Design -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black p-8 rounded-xl hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 bg-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:text-gray-100 p-8 rounded-xl hover-lift transition-all glassmorphism">
                     <div class="flex items-center justify-start mb-4">
                         <i class="fas fa-paint-brush text-2xl text-primary mb-2"></i>
                         <h3 class="text-xl font-semibold ml-3">UI/UX Design</h3>
                     </div>
-                    <p class="text-gray-200 dark:text-gray-400 mb-4">
+                    <p class="text-gray-200 text-gray-400 mb-4">
                         Crafting intuitive and engaging user interfaces with a focus on user experience and accessibility.
                     </p>
                     <div class="flex items-center space-x-2">
@@ -385,12 +336,12 @@
                     </div>
                 </div>
                 <!-- Graphic Design -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black p-8 rounded-xl hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 bg-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:text-gray-100 p-8 rounded-xl hover-lift transition-all glassmorphism">
                     <div class="flex items-center justify-start mb-4">
                         <i class="fas fa-image text-2xl text-primary mb-2"></i>
                         <h3 class="text-xl font-semibold ml-3">Graphic Design</h3>
                     </div>
-                    <p class="text-gray-200 dark:text-gray-400 mb-4">
+                    <p class="text-gray-200 text-gray-400 mb-4">
                         Creating visually appealing graphics for web and print using industry-standard tools.
                     </p>
                     <div class="flex items-center space-x-2">
@@ -405,19 +356,19 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-white dark:bg-gray-900">
+    <section id="projects" class="py-20 bg-gray-900 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-16 gradient-text">Featured Projects</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Project 1 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 bg-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:text-gray-100 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/800x400?placeholder=Project+1" alt="Project 1" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4">
                         <h3 class="text-xl font-semibold mb-2">Online Concern System</h3>
-                        <p class="text-gray-200 dark:text-gray-400 mb-3">
+                        <p class="text-gray-200 text-gray-400 mb-3">
                             A web-based system for reporting and tracking community concerns and issues.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -433,14 +384,14 @@
                     </div>
                 </div>
                 <!-- Project 2 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 bg-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:text-gray-100 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/800x400?placeholder=Project+2" alt="Project 2" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4">
                         <h3 class="text-xl font-semibold mb-2 ">Hotel Management System</h3>
-                        <p class="text-gray-200 dark:text-gray-400 mb-3">
+                        <p class="text-gray-200 text-gray-400 mb-3">
                             A comprehensive hotel management system with booking, inventory, and staff management features.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -455,14 +406,14 @@
                     </div>
                 </div>
                 <!-- Project 3 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 bg-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:text-gray-100 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/800x400?placeholder=Project+3" alt="Project 3" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4">
                         <h3 class="text-xl font-semibold mb-2 ">Portfolio Website</h3>
-                        <p class="text-gray-200 dark:text-gray-400 mb-3">
+                        <p class="text-gray-200 text-gray-400 mb-3">
                             A personal portfolio website showcasing skills, projects, and experience.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -478,14 +429,14 @@
                     </div>
                 </div>
                 <!-- Project 4 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 bg-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:text-gray-100 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/800x400?placeholder=Project+4" alt="Project 4" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4">
                         <h3 class="text-xl font-semibold mb-2 ">Student Management System</h3>
-                        <p class="text-gray-200 dark:text-gray-400 mb-3">
+                        <p class="text-gray-200 text-gray-400 mb-3">
                             A system for managing student records, grades, and attendance.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -500,14 +451,14 @@
                     </div>
                 </div>
                 <!-- Project 5 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 bg-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:text-gray-100 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/800x400?placeholder=Project+5" alt="Project 5" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4">
                         <h3 class="text-xl font-semibold mb-2 ">Task Management App</h3>
-                        <p class="text-gray-200 dark:text-gray-400 mb-3">
+                        <p class="text-gray-200 text-gray-400 mb-3">
                             A simple task management application with CRUD operations.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -523,14 +474,14 @@
                     </div>
                 </div>
                 <!-- Project 6 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 bg-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:text-gray-100 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/800x400?placeholder=Project+6" alt="Project 6" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4">
                         <h3 class="text-xl font-semibold mb-2 ">E-commerce Platform</h3>
-                        <p class="text-gray-200 dark:text-gray-400 mb-3">
+                        <p class="text-gray-200 text-gray-400 mb-3">
                             An online store with product catalog, shopping cart, and payment processing.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -549,7 +500,7 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="experience" class="py-20 bg-gray-50 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-16 gradient-text">Experience</h2>
             <div class="space-y-8">
@@ -559,9 +510,9 @@
                         <i class="fas fa-code"></i>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Junior Full Stack Developer</h3>
-                        <p class="text-gray-200 dark:text-gray-300">Company Name • Jan 2023 - Present</p>
-                        <p class="text-gray-200 dark:text-gray-300">
+                        <h3 class="text-xl font-semibold text-gray-900 text-gray-100">Junior Full Stack Developer</h3>
+                        <p class="text-gray-200 text-gray-300">Company Name • Jan 2023 - Present</p>
+                        <p class="text-gray-200 text-gray-300">
                             Developed and maintained web applications using PHP, JavaScript, and MySQL. Collaborated with cross-functional teams to deliver high-quality software solutions.
                         </p>
                     </div>
@@ -572,9 +523,9 @@
                         <i class="fas fa-briefcase"></i>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Freelance Projects</h3>
-                        <p class="text-gray-200 dark:text-gray-300">Jan 2021 - Dec 2022</p>
-                        <p class="text-gray-200 dark:text-gray-300">
+                        <h3 class="text-xl font-semibold text-gray-900 text-gray-100">Freelance Projects</h3>
+                        <p class="text-gray-200 text-gray-300">Jan 2021 - Dec 2022</p>
+                        <p class="text-gray-200 text-gray-300">
                             Worked on various freelance projects including website development, UI/UX design, and custom software solutions for clients.
                         </p>
                     </div>
@@ -585,9 +536,9 @@
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Academic Projects</h3>
-                        <p class="text-gray-200 dark:text-gray-300">Sep 2018 - Dec 2022</p>
-                        <p class="text-gray-200 dark:text-gray-300">
+                        <h3 class="text-xl font-semibold text-gray-900 text-gray-100">Academic Projects</h3>
+                        <p class="text-gray-200 text-gray-300">Sep 2018 - Dec 2022</p>
+                        <p class="text-gray-200 text-gray-300">
                             Completed multiple academic projects covering web development, database management, and software engineering principles.
                         </p>
                     </div>
@@ -597,74 +548,74 @@
     </section>
 
     <!-- Certificates Section -->
-    <section id="certificates" class="py-20 bg-white dark:bg-gray-900">
+    <section id="certificates" class="py-20 bg-gray-900 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-16 gradient-text">Certificates</h2>
             <div class="grid md:grid-cols-3 gap-6">
                 <!-- Certificate 1 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 bg-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:text-gray-100 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/300x200?placeholder=Certificate+1" alt="Certificate 1" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-semibold mb-2">Certificate Title 1</h3>
-                        <p class="text-gray-200 dark:text-gray-400">NetAcad • 2023</p>
+                        <p class="text-gray-200 text-gray-400">NetAcad • 2023</p>
                     </div>
                 </div>
                 <!-- Certificate 2 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 bg-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:text-gray-100 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/300x200?placeholder=Certificate+2" alt="Certificate 2" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-semibold mb-2">Certificate Title 2</h3>
-                        <p class="text-gray-200 dark:text-gray-400">Graphic Design Seminar • 2022</p>
+                        <p class="text-gray-200 text-gray-400">Graphic Design Seminar • 2022</p>
                     </div>
                 </div>
                 <!-- Certificate 3 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 bg-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:text-gray-100 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/300x200?placeholder=Certificate+3" alt="Certificate 3" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-semibold mb-2">Certificate Title 3</h3>
-                        <p class="text-gray-200 dark:text-gray-400">Cyber Security Seminar • 2021</p>
+                        <p class="text-gray-200 text-gray-400">Cyber Security Seminar • 2021</p>
                     </div>
                 </div>
                 <!-- Certificate 4 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 bg-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:text-gray-100 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/300x200?placeholder=Certificate+4" alt="Certificate 4" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-semibold mb-2">Certificate Title 4</h3>
-                        <p class="text-gray-200 dark:text-gray-400">Web Development Seminar • 2020</p>
+                        <p class="text-gray-200 text-gray-400">Web Development Seminar • 2020</p>
                     </div>
                 </div>
                 <!-- Certificate 5 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 bg-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:text-gray-100 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/300x200?placeholder=Certificate+5" alt="Certificate 5" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-semibold mb-2">Certificate Title 5</h3>
-                        <p class="text-gray-200 dark:text-gray-400">Game Development Seminar • 2019</p>
+                        <p class="text-gray-200 text-gray-400">Game Development Seminar • 2019</p>
                     </div>
                 </div>
                 <!-- Certificate 6 -->
-                <div class="bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-800/hover:dark:bg-gray-700 hover:text-black dark:hover:text-black rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
+                <div class="bg-gray-800/50 hover:bg-gray-50 bg-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:text-gray-100 rounded-xl overflow-hidden hover-lift transition-all glassmorphism">
                     <div class="relative h-48 w-full">
                         <img src="https://via.placeholder.com/300x200?placeholder=Certificate+6" alt="Certificate 6" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-semibold mb-2">Certificate Title 6</h3>
-                        <p class="text-gray-200 dark:text-gray-400">Issuing Organization • 2018</p>
+                        <p class="text-gray-200 text-gray-400">Issuing Organization • 2018</p>
                     </div>
                 </div>
             </div>
@@ -672,7 +623,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="contact" class="py-20 bg-gray-50 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-16 gradient-text">Contact Me</h2>
             <div class="grid md:grid-cols-2 gap-12">
@@ -680,49 +631,49 @@
                 <div>
                     <form id="contactForm" class="space-y-6">
                         <div>
-                            <label for="name" class="block text-gray-700 dark:text-gray-200 mb-2">Name</label>
-                            <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20">
+                            <label for="name" class="block text-gray-700 text-gray-200 mb-2">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20">
                         </div>
                         <div>
-                            <label for="email" class="block text-gray-700 dark:text-gray-200 mb-2">Email</label>
-                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20">
+                            <label for="email" class="block text-gray-700 text-gray-200 mb-2">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20">
                         </div>
                         <div>
-                            <label for="subject" class="block text-gray-700 dark:text-gray-200 mb-2">Subject</label>
-                            <input type="text" id="subject" name="subject" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20">
+                            <label for="subject" class="block text-gray-700 text-gray-200 mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" required class="w-full px-4 py-2 border border-gray-300 border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20">
                         </div>
                         <div>
-                            <label for="message" class="block text-gray-700 dark:text-gray-200 mb-2">Message</label>
-                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"></textarea>
+                            <label for="message" class="block text-gray-700 text-gray-200 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"></textarea>
                         </div>
                         <button type="submit" class="w-full bg-primary hover:bg-secondary text-white font-medium py-3 px-6 rounded-lg hover-lift transition-all">
                             Send Message
                         </button>
                     </form>
                     <div id="formMessage" class="mt-4 text-center hidden">
-                        <p class="text-green-600 dark:text-green-400 font-medium">Thank you for your message! I'll get back to you soon.</p>
+                        <p class="text-primary text-primary font-medium">Thank you for your message! I'll get back to you soon.</p>
                     </div>
                 </div>
                 <!-- Contact Info -->
                 <div class="space-y-6">
                     <h3 class="text-2xl font-semibold mb-4 gradient-text">Get in Touch</h3>
-                    <p class="text-gray-200 dark:text-gray-300">
+                    <p class="text-gray-200 text-gray-300">
                         I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
                     </p>
                     <div class="space-y-4">
-                        <p class="flex items-center space-x-3 text-gray-200 dark:text-gray-300">
+                        <p class="flex items-center space-x-3 text-gray-200 text-gray-300">
                             <i class="fas fa-envelope"></i>
                             <span>rjverceles1@gmail.com</span>
                         </p>
-                        <p class="flex items-center space-x-3 text-gray-200 dark:text-gray-300">
+                        <p class="flex items-center space-x-3 text-gray-200 text-gray-300">
                             <i class="fab fa-github"></i>
                             <span>github.com/Rigu3l</span>
                         </p>
-                        <p class="flex items-center space-x-3 text-gray-200 dark:text-gray-300">
+                        <p class="flex items-center space-x-3 text-gray-200 text-gray-300">
                             <i class="fab fa-linkedin"></i>
                             <span>linkedin.com/in/arjuwey</span>
                         </p>
-                        <p class="flex items-center space-x-3 text-gray-200 dark:text-gray-300">
+                        <p class="flex items-center space-x-3 text-gray-200 text-gray-300">
                             <i class="fab fa-facebook"></i>
                             <span>facebook.com/arjuwey</span>
                         </p>
@@ -733,13 +684,13 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 dark:bg-gray-900 text-gray-300 py-8">
+    <footer class="bg-gray-800 bg-gray-900 text-gray-300 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
                 <!-- About -->
                 <div>
                     <h3 class="text-xl font-bold mb-4 gradient-text">RJ</h3>
-                    <p class="text-gray-200 dark:text-gray-300">
+                    <p class="text-gray-200 text-gray-300">
                         Junior Full Stack Developer passionate about creating innovative web solutions.
                     </p>
                 </div>
@@ -774,7 +725,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-8 text-center text-gray-300 dark:text-gray-400 border-t border-gray-700 pt-4">
+            <div class="mt-8 text-center text-gray-300 text-gray-400 border-t border-gray-700 pt-4">
                 <p>&copy; <span id="year"></span> RJ. All rights reserved.</p>
             </div>
         </div>
