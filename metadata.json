@@ -1,0 +1,6 @@
+{
+  "name": "Riguel Aleje — Full Stack Developer Portfolio",
+  "description": "Scroll-driven interactive portfolio of Riguel Aleje, Full Stack Developer based in Olongapo City, Zambales. Built with vanilla ES modules, GSAP ScrollTrigger, Lenis, and Three.js.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

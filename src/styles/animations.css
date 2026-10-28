@@ -1,0 +1,80 @@
+/* ==========================================================================
+   ANIMATIONS.CSS — Progressive Enhancement CSS Scroll-Timeline & Reduced Motion
+   ========================================================================== */
+
+/* Native CSS Scroll-Driven Progress Bar where supported */
+@supports (animation-timeline: scroll()) {
+  @keyframes scrollProgressScale {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  .scroll-progress-bar.has-css-timeline {
+    animation: scrollProgressScale linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+/* Easter Egg Glitch Mode */
+@keyframes studioGlitch {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-3px, 2px);
+  }
+  50% {
+    transform: translate(3px, -2px);
+  }
+  75% {
+    transform: translate(-2px, -1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+body.easter-egg-active .display-hero,
+body.easter-egg-active .display-xl {
+  animation: studioGlitch 180ms steps(2) 4;
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   PREFERS-REDUCED-MOTION: Strict Accessibility & Static Readability
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .scrub-word {
+    opacity: 1 !important;
+  }
+
+  .split-char,
+  .split-word,
+  .split-line {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .skill-card {
+    position: relative !important;
+    top: auto !important;
+    transform: none !important;
+  }
+
+  .custom-cursor {
+    display: none !important;
+  }
+}

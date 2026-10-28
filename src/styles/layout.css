@@ -1,0 +1,323 @@
+/* ==========================================================================
+   LAYOUT.CSS — Page Container, Section Grid, Top Bar Contract, Responsive Rules
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section-pad {
+  padding-block: var(--space-2xl);
+}
+
+.section-header-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: var(--space-xl);
+}
+
+/* ==========================================================================
+   Top Bar Contract (One-Row, Three-Zone Header separated by gap-8)
+   Zone 1: Single-line Brand Wordmark
+   Zone 2: 4–5 single-line text nav links
+   Zone 3: 1 Primary CTA button
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  background-color: var(--bg-overlay);
+  border-bottom: 1px solid var(--border-subtle);
+  transition:
+    transform var(--duration-base) var(--ease-out-expo),
+    background-color var(--duration-base) var(--ease-out-expo);
+}
+
+.site-header.is-hidden {
+  transform: translateY(-100%);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  height: 4.25rem;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.site-header__brand {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 2.5vw, 2.25rem);
+}
+
+.site-header__link {
+  position: relative;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-block: 0.35rem;
+  transition: color var(--duration-fast) ease;
+}
+
+.site-header__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.5px;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform var(--duration-base) var(--ease-out-expo);
+}
+
+.site-header__link:hover,
+.site-header__link.is-active {
+  color: var(--text-primary);
+}
+
+.site-header__link:hover::after,
+.site-header__link.is-active::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.site-header__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.15rem;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #090a0f;
+  background-color: var(--accent);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-height: 2.5rem;
+  transition:
+    background-color var(--duration-fast) ease,
+    transform var(--duration-fast) var(--ease-out-expo);
+}
+
+.site-header__cta:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Hero Layout (2-Column Split + Full-Width Metadata Row Below)
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: calc(4.25rem + var(--space-lg));
+  padding-bottom: var(--space-lg);
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.hero-split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: stretch;
+  gap: var(--space-lg);
+  margin-block: auto;
+  padding-block: var(--space-md);
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-md);
+  z-index: 2;
+}
+
+.hero-stage-wrap {
+  position: relative;
+  min-height: clamp(320px, 44vw, 520px);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  background: radial-gradient(circle at 50% 45%, rgba(249, 115, 22, 0.1), transparent 70%),
+    var(--bg-elevated);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-webgl-mount {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-meta-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-subtle);
+  z-index: 2;
+}
+
+/* ==========================================================================
+   About / Scrubbed Section Layout
+   ========================================================================== */
+.about-section {
+  position: relative;
+  z-index: 3;
+  background-color: var(--bg-canvas);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+.about-secondary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ==========================================================================
+   Selected Work — Pinned Chaptered Showcase
+   ========================================================================== */
+.work-section {
+  position: relative;
+  background-color: var(--bg-canvas);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.work-pinned-viewport {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 5rem;
+  padding-bottom: 2.5rem;
+}
+
+.work-stage {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: var(--space-lg);
+  align-items: stretch;
+  min-height: clamp(440px, 60vh, 620px);
+}
+
+/* ==========================================================================
+   Capabilities / Process Sticky Cards
+   ========================================================================== */
+.skills-section {
+  position: relative;
+  background-color: var(--bg-canvas);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.skills-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* ==========================================================================
+   Footer Layout
+   ========================================================================== */
+.site-footer {
+  position: relative;
+  background-color: var(--bg-elevated);
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-lg);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints (360px -> 2560px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-split,
+  .work-stage,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-meta-strip,
+  .stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-secondary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header__nav {
+    display: none;
+  }
+
+  .hero-meta-strip,
+  .stats-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .work-pinned-viewport {
+    min-height: auto;
+    padding-block: var(--space-xl);
+  }
+}

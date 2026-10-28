@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B0E"/>
+      <stop offset="50%" stop-color="#0D161C"/>
+      <stop offset="100%" stop-color="#06080A"/>
+    </linearGradient>
+    <radialGradient id="gridGlow" cx="0.5" cy="0.45" r="0.5">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.22"/>
+      <stop offset="60%" stop-color="#F97316" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg3)"/>
+  <rect width="1600" height="1000" fill="url(#gridGlow)"/>
+  <rect x="140" y="120" width="1320" height="760" rx="18" fill="#0B1116" stroke="#1E2D3A" stroke-width="1.5"/>
+  <line x1="140" y1="188" x2="1460" y2="188" stroke="#182530" stroke-width="1"/>
+  <text x="190" y="160" fill="#7DD3FC" font-family="monospace" font-size="15" letter-spacing="2">CENTRAL LUZON SUBSTATION TELEMETRY · 230KV TRANSMISSION TOPOLOGY</text>
+  <text x="1225" y="160" fill="#F97316" font-family="monospace" font-size="14">FREQ: 60.002 HZ · NOMINAL</text>
+
+  <!-- Network Topology Nodes -->
+  <g stroke="#294052" stroke-width="2">
+    <line x1="360" y1="360" x2="680" y2="300"/>
+    <line x1="680" y1="300" x2="1040" y2="370"/>
+    <line x1="680" y1="300" x2="640" y2="560"/>
+    <line x1="360" y1="360" x2="640" y2="560"/>
+    <line x1="640" y1="560" x2="1040" y2="370"/>
+    <line x1="1040" y1="370" x2="1280" y2="530"/>
+    <line x1="640" y1="560" x2="1280" y2="530"/>
+  </g>
+  <!-- Highlighted Load Path -->
+  <polyline points="360,360 680,300 1040,370 1280,530" fill="none" stroke="#F97316" stroke-width="3.5"/>
+
+  <!-- Nodes -->
+  <g font-family="monospace" font-size="13" fill="#E2E8F0">
+    <circle cx="360" cy="360" r="18" fill="#111C24" stroke="#F97316" stroke-width="3"/>
+    <text x="290" y="405">BOTOLAN 230KV (184 MW)</text>
+
+    <circle cx="680" cy="300" r="22" fill="#111C24" stroke="#F97316" stroke-width="3"/>
+    <text x="605" y="262">CASTILLEJOS HUB (312 MW)</text>
+
+    <circle cx="640" cy="560" r="18" fill="#111C24" stroke="#38BDF8" stroke-width="3"/>
+    <text x="555" y="605">SUBIC SUBSTATION B (142 MW)</text>
+
+    <circle cx="1040" cy="370" r="20" fill="#111C24" stroke="#F97316" stroke-width="3"/>
+    <text x="965" y="332">OLONGAPO FEEDER 01 (228 MW)</text>
+
+    <circle cx="1280" cy="530" r="18" fill="#111C24" stroke="#F97316" stroke-width="3"/>
+    <text x="1165" y="575">HERMOSA JUNCTION (410 MW)</text>
+  </g>
+
+  <!-- Bottom Harmonic Waveform & Metrics -->
+  <rect x="190" y="660" width="1220" height="175" rx="12" fill="#0F171E" stroke="#1E2D3A"/>
+  <text x="230" y="702" fill="#64748B" font-family="monospace" font-size="13" letter-spacing="1.5">REAL-TIME LOAD BALANCING &amp; ANOMALY DETECTION STREAM</text>
+  <text x="230" y="758" fill="#F8FAFC" font-family="sans-serif" font-weight="700" font-size="38">876 MW Peak Load · 1.2M Sensor Rows / Day</text>
+  <text x="230" y="798" fill="#7DD3FC" font-family="monospace" font-size="14">React · Canvas 2D · PHP Time-Series Aggregator · MySQL Partitioned Tables</text>
+  <path d="M 960 755 Q 990 695, 1020 755 T 1080 755 T 1140 755 T 1200 755 T 1260 755 T 1320 755" fill="none" stroke="#F97316" stroke-width="3"/>
+</svg>
