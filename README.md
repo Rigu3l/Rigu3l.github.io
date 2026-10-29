@@ -1,113 +1,64 @@
-# Riguel Aleje — Full Stack Developer Portfolio
+# Rj Verceles — Interactive 3D Story & Portfolio
 
-An award-style, scroll-driven personal portfolio for **Riguel Aleje** (Full Stack Developer based in Olongapo City, Zambales, Philippines). Engineered with vanilla ES modules, custom CSS properties & fluid `clamp()` typography, **GSAP + ScrollTrigger**, **Lenis** smooth scrolling, **Three.js** WebGL, and procedural **Web Audio API** sound design.
+Full Stack Developer & Web Designer from Zambales, Philippines.
+> *"It all starts with curiosity. I don't decorate — I solve the task: so people notice it, and so it works."*
 
 ---
 
-## 1. Quick Start & Commands
+## Architecture Overview
+
+This project combines **Part 1 (The 3D Room & Scroll Story)** and **Part 2 (The Editorial Page Sheet, Works Tunnel, 3D Phone & Brief Form)** into a single Vite + Three.js application.
+
+### Part 1 — The 3D Room & Scroll Story (`920vh` track)
+- **`src/main.js`**: Master Three.js render loop, adaptive quality controller (`?q=0|1|2`, `?dpr=`), post-processing (`GTAOPass`, `UnrealBloomPass`, custom `FilmShader`), and cross-module exports (`warm`, `setBarColor`, `sfx`, `riser`, `startMusic`).
+- **`src/timeline.js`**: Deterministic scroll math, 10-chapter timeline (`920vh`), scroll-gating at 4 interactive OS gates, and the 5-stage old-to-modern PC transition (`POWER-DOWN` -> `RETIRE` -> `BLANK BEAT` -> `ARRIVE` -> `BOOT`).
+- **`src/room.js` & `src/cardboard.js`**: Procedural 3D studio desk (retro CRT & lamp morphing into modern widescreen monitor, LED bar, and neon logo) with custom corrugated-cardboard `onBeforeCompile` shader and dithered pixel dissolve.
+- **`src/crt-screen.js` & `src/connect-screen.js`**: Curvature/scanline/phosphor CRT shader with tube collapse & afterglow, plus the interactive opening `Connect` screen.
+- **`src/os.js` & `src/html-text.js`**: Monitor-projected interactive OS layer (Hold-to-Transform button with 3 skin states, Statement card, Error/Fix sequence, Calm Shipped window) and wall-projected 3D typography.
+- **`src/music.js`**: Web Audio API procedural ambient soundtrack and synthesized sound effects (`powerdown`, `whoosh`, `boot`, `click`, `success`, `error`).
+
+### Part 2 — The Page Sheet (`#content`)
+- **`src/content.js`**:
+  - **Reveal Engine**: Word-split blur reveal (`[data-reveal="words"]`), fade-up blocks (`[data-reveal="fade"]`), 1.6s eased counters (`[data-count]`), and scroll-driven kinetic drifting lines.
+  - **Numbers Band (`#numbers`)**: `300vh` section with `100vh` sticky stage (`OPEN` clip-path -> `RUN` horizontal stat cards -> `FADE`), header `.on-color` toggle, and `setBarColor`.
+  - **Contact & Brief Form (`#contact`)**: Hover-fill contact links (`rjverceles1@gmail.com` with Copy Email button, GitHub, Portfolio), fit-lines dynamic input font scaling, inline EN/FIL validation, and `POST /api/brief` with automatic `mailto:rjverceles1@gmail.com` fallback.
+  - **Footer Word (`#footer`)**: Full-width `RJ VERCLES` display word with per-character inline SVG `feTurbulence` + `feDisplacementMap` warp driven by pointer proximity.
+- **`src/mesh.js`**: Lazy `1/3`-resolution WebGL mesh-gradient shader (5 Lissajous palette blobs, 2-pass domain warping, Bayer 4x4 ordered dither, CSS radial-gradient fallback).
+- **`src/works.js`**: `500vh` pinned 3D Works Tunnel placing all 6 projects along a Z-axis spiral/helix with rounded-corner alpha masks, procedural Fraunces-style cover textures, station stops, velocity zoom-blur + chromatic split, circular clip-path open/close, bottom-left HUD, dot nav, and `"View as list"` grid toggle.
+- **`src/ig-phone.js`**: Lazy 3D Phone section (`ExtrudeGeometry` beveled metallic frame, `540x1170` 30fps scrolling studio feed of Rj's 7 posts, 4 floating post cards, pointer spring tilt / touch scroll sweep).
+- **`src/cursor.js`**: `96x96` 3D voxel cursor (`InstancedMesh` of 26 cubes morphing across `default`, `link`, `drag`, `view`, and `text` states, with 300ms idle sleep) reconciled with `#cursor-pill`.
+- **`src/lang.js`**: Instant English (`en`) and Filipino (`fil`) localization without page reload.
+
+---
+
+## Query Parameters for Testing & Inspection
+
+| Parameter | Description |
+| :--- | :--- |
+| `?nostory` | Skips the 3D room story, jumps directly to `#content`, and defaults Works to list view |
+| `?motion=reduce` | Forces reduced-motion mode (disables heavy transforms, defaults Works to list view, static mesh gradient) |
+| `?mod=0..1` | Freezes the Part 1 old-to-modern PC transition at a specific `mod` value |
+| `?v=0..920` | Freezes Part 1 story scroll at a specific `vh` position |
+| `?q=0\|1\|2` | Forces rendering quality tier (`0` = low, `1` = medium, `2` = high) |
+| `?debug` | Logs WebGL capabilities, unmasked renderer, and shader diagnostics |
+
+---
+
+## Development & Build Commands
 
 ```bash
 # Install dependencies
 npm install
 
-# Start development server on port 3000
+# Start Vite development server on port 3000
 npm run dev
 
-# Build production bundle into /dist
+# Run unit tests (Part 1 timeline + Part 2 pure logic)
+npx tsx --test src/timeline.test.js src/part2.test.js
+
+# Build production bundle to dist/
 npm run build
 
-# Preview production build locally
+# Preview production build
 npm run preview
 ```
-
----
-
-## 2. Architecture & File Structure
-
-```text
-/
-├── index.html                  # Semantic HTML, SEO/OG tags, JSON-LD Person schema, font preloads
-├── package.json                # Scripts & dependencies (gsap, lenis, three, vite)
-├── vite.config.ts              # Vite bundler config
-├── public/
-│   ├── favicon.svg             # Vector monogram favicon
-│   ├── og.svg                  # OpenGraph social preview card
-│   ├── portfolio.zip           # Downloadable project archive (excluding node_modules)
-│   └── images/
-│       ├── work-01.svg         # Ch 01: Subic Vessel Telemetry cover artwork
-│       ├── work-02.svg         # Ch 02: KapeZambales ERP & POS cover artwork
-│       ├── work-03.svg         # Ch 03: Luzon Grid Telemetry cover artwork
-│       ├── work-04.svg         # Ch 04: Obra Publishing Engine cover artwork
-│       └── work-05.svg         # Ch 05: Talon Ledger & Payroll cover artwork
-└── src/
-    ├── main.js                 # Boot sequence: sound -> smooth scroll -> sections -> preloader gate
-    ├── content.js              # Single source of truth for bio, projects, stats, skills, socials
-    ├── styles/
-    │   ├── base.css            # 60-30-10 color tokens, dark/light themes, reset, film grain
-    │   ├── typography.css      # Fluid clamp() type scale, tabular-nums, split-text & text-roll
-    │   ├── layout.css          # 3-zone Top Bar Contract, 2-col hero split, pinned work stage
-    │   ├── components.css      # Preloader, custom cursor, 3D HUD dock, Pong modal, lightbox
-    │   └── animations.css      # @supports(animation-timeline: scroll()) & prefers-reduced-motion
-    └── js/
-        ├── preloader.js        # Real asset counter (00->100), witty status lines, enter gate
-        ├── smooth-scroll.js    # Lenis + GSAP ScrollTrigger sync, scroll lock/unlock
-        ├── cursor.js           # Desktop fine-pointer lerp ring cursor with contextual labels
-        ├── nav.js              # 3-zone header hide/show, active section tracker, theme toggle, Easter egg
-        ├── hero.js             # Hero character reveal, parallax, companion bot
-        ├── webgl/
-        │   └── scene.js        # Three.js 7-part Orbital Gyroscope, RoomEnvironment, software-GL guard
-        ├── text-split.js       # Accessible char/word splitter (aria-label on parent, aria-hidden spans)
-        ├── about.js            # Scroll-scrubbed bio opacity + count-up stats strip
-        ├── marquee.js          # Scroll-velocity-reactive looping marquee with dynamic skew
-        ├── work.js             # Pinned scrubbed chapter showcase, keyboard/drag/arrow sync, lightbox
-        ├── skills.js           # Scroll-driven sticky stacking capability cards
-        ├── footer.js           # Live Olongapo City (GMT+8) clock, magnetic CTA, copy-email fallback
-        ├── pong.js             # Full-screen HTML5 Canvas Pong mini-game with AI opponent
-        ├── sound.js            # Zero-dependency Web Audio API synthesizer (ticks, whooshes, drone)
-        └── utils.js            # Shared motion tokens, lerp/clamp, reduced-motion helpers
-```
-
----
-
-## 3. How to Edit Content (`src/content.js`) & Swap Media
-
-1. **Text, Bio, Stats, and Projects**:
-   Open `src/content.js` to update your bio paragraph, stats strip numbers, project chapters (`CONTENT.projects`), capabilities (`CONTENT.skills`), email address, or social handles.
-2. **Swapping Project Images / Videos**:
-   - Place new `.webp`, `.avif`, or `.svg` cover assets inside `public/images/`.
-   - Update the `image` path in `src/content.js` and the matching `<img src="/images/..." />` slides in `index.html`.
-   - Always keep `width="1600" height="1000"` on `<img>` elements to guarantee zero Cumulative Layout Shift (`CLS = 0.00`).
-3. **Customizing Sound Design (`src/js/sound.js`)**:
-   - All UI sounds (hover tick, click, chapter transition whoosh, Pong blips, and ambient studio drone) are synthesized in real time via the browser's native Web Audio API in `src/js/sound.js`. No external `.mp3` files are required, eliminating audio network requests.
-
----
-
-## 4. Deployment Steps
-
-- **Vercel / Netlify**:
-  - Build command: `npm run build`
-  - Output directory: `dist`
-  - Node version: `20.x` or higher
-- **GitHub Pages**:
-  - Run `npm run build` and deploy the `dist/` folder via `gh-pages` or GitHub Actions (`actions/deploy-pages`).
-
----
-
-## 5. Performance & Accessibility Notes
-
-- **Compositor-Only Motion**: Animations strictly target `transform`, `opacity`, and `clip-path`.
-- **WebGL Guard**: `src/js/webgl/scene.js` detects software renderers (`SwiftShader`, `llvmpipe`) and caps `devicePixelRatio`, pauses rendering via `IntersectionObserver` when scrolled off-screen or when the browser tab is hidden, and disposes all geometries/materials/textures on cleanup.
-- **`prefers-reduced-motion`**: Automatically disables Lenis smooth-scroll hijacking, pinning, character split animations, WebGL continuous motion, and marquee movement so all content is immediately readable.
-- **Screen-Reader Integrity**: `splitIntoChars` and `splitIntoWords` preserve `aria-label` on the parent heading/paragraph and mark split `<span>` nodes `aria-hidden="true"`.
-
----
-
-## 6. Manual Test Checklist
-
-- [x] **Preloader & Enter Gate**: Counts `00 -> 100`, rotates status lines, unlocks audio & scroll on click, skips on repeat session reload.
-- [x] **Smooth Scroll & Progress Bar**: Lenis synced with ScrollTrigger; top progress bar scales `0 -> 1`.
-- [x] **Hero & 3D Core**: Character reveal, collapsible bottom HUD (`Explode` slider + `Obsidian / Titanium / Copper` finishes), companion bot tracks cursor.
-- [x] **About & Marquee**: Bio words illuminate on scroll scrub; stats count up on enter; marquee reacts to scroll velocity.
-- [x] **Selected Work (Pinned Chapters)**: Scrubs `01 -> 05` on desktop scroll; syncs with `01..05` buttons, `←`/`→` buttons, keyboard arrows, and drag/swipe; degrades to vertical card stack on mobile (`<= 768px`).
-- [x] **Footer**: Live Olongapo City (`GMT+8`) clock ticks every second; magnetic CTA follows pointer; `Copy Email` copies to clipboard and displays `Copied` for 1.5s.
-- [x] **Pong Mini-Game & Easter Egg**: Opens full-screen Pong overlay (`ESC` to close); clicking `Riguel Aleje` wordmark 5 times (or Konami code) triggers Overclock Easter Egg.

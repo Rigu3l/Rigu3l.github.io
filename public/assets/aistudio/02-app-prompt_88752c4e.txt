@@ -1,0 +1,276 @@
+PART 2 OF 2 - THE PAGE SHEET AND EVERYTHING AFTER THE STORY
+(Run this AFTER Part 1. It continues the SAME project folder created by Part 1 (portfolio/). Do not start a new project and do not rewrite Part 1 files except where this prompt says to hook into them.)
+
+=====================================================================
+# TASK
+=====================================================================
+Part 1 built the interactive 3D story (loader, connect-the-cable opening, camera pull-back, cardboard-to-real room, era morph, wall headlines, push into the modern monitor, press-and-hold update, three dialogs, finale) and left an empty <div class="content" id="content"> that rises over the room.
+
+Now build everything that lives on that white page sheet and the shared systems around it:
+about / greeting -> numbers band -> WebGL mesh-gradient transition -> works tunnel -> 3D phone -> contact + brief form -> footer with the warped giant word, plus the 3D voxel cursor, the full i18n dictionaries, accessibility, performance and delivery.
+
+Architecture reference: https://helloworlddsgn.com/ . Recreate the ARCHITECTURE AND MECHANICS with ORIGINAL code. Do NOT copy its text, logo, name, fonts, illustrations, project work, images, videos, icons, email address, analytics or tracking beacon (e.g. any Cloudflare insights script), or any source. Use my content, my palette (the tokens from Part 1), my own art direction. Do not add any third-party analytics.
+
+=====================================================================
+# MY DETAILS (use the same ones as Part 1; fill the rest)
+=====================================================================
+About
+
+Greeting: Hi, I'm Rj.
+
+I'm Rj Verceles, a Full Stack Developer and Web Designer in Zambales. I don't decorate websites. I solve the task: so people notice it, and so it works.
+
+It started on paper, with a sketch and a pencil. Now I build the whole thing — the front end you see, the backend that holds it up, and the database behind it. I like work that ships and gets used, not just work that looks good in a screenshot.
+
+What I do:
+
+Web design and front-end builds
+Full-stack web systems in PHP and MySQL
+QR, logging, and dashboard systems
+PDF flipbooks and publishing tools
+Portfolio and landing sites
+Numbers
+
+6 — Projects built
+25 — Features in my largest module, the Management Department
+150+ — Student records in the CelCheck test data
+5 — Core tools I build with: HTML/CSS, JavaScript, PHP, MySQL, Supabase
+Works — 6 projects
+
+CelCheck — 2026 — Leader, Programmer (Front/Back End)
+QR entry/exit logging for Celtech College computer labs, with per-PC tracking, failed-checkout flags, and daily/weekly/monthly reports.
+Cover: placeholder — violet gradient canvas/SVG with "CelCheck" in Fraunces. No video loop.
+URL: https://github.com/Rigu3l/Computer-Lab-Log
+Chapter: Systems
+Celtech College Online Clearance Dashboard — 2026 — Designer and Developer
+A clearance dashboard that puts scattered student clearance steps into one trusted list.
+Cover: placeholder — navy gradient canvas/SVG with "Clearance" in Fraunces. No video loop.
+URL: https://github.com/Rigu3l/online-clearance
+Chapter: Systems
+Hotel Management System — Management Department Module — 2026 — Management Department owner
+Executive dashboard, 17 report types, budgets and KPI targets, decision tracking, and operational alerts, with CSV and PDF export.
+Cover: placeholder — cream and pink gradient canvas/SVG with "Management" in Fraunces. No video loop.
+URL: https://github.com/Rigu3l/management-department
+Chapter: Systems
+Manuazine — 2026 — Designer and Developer
+A Heyzine-style PDF-to-flipbook viewer with upload, page-flip, thumbnails, and Supabase storage.
+Cover: placeholder — paper-white gradient canvas/SVG with "Manuazine" in Fraunces. No video loop.
+URL: https://github.com/Rigu3l/Manuazine
+Chapter: Publishing
+Arjuwey — 2026 — Designer and Developer
+A cinematic, dark, scroll-driven portfolio with a pinned approach section, word-swap statement, marquee, and full-screen menu.
+Cover: placeholder — near-black gradient canvas/SVG with "Arjuwey" in Fraunces. No video loop.
+URL: https://github.com/Rigu3l/Arjuwey
+Chapter: Portfolios
+Rigu3l.github.io Portfolio — 2026 — Designer and Developer
+My live portfolio site, rebuilt from source with an auto-build workflow.
+Cover: placeholder — dark gradient canvas/SVG with "Rj Verceles" in Fraunces. No video loop.
+URL: https://rigu3l.github.io/
+Chapter: Portfolios
+Social posts for the 3D phone feed — 7 posts, generic feed UI, no real brand
+
+Image: placeholder — sketchbook page on a desk, violet gradient. Caption: "Started on paper. Still start on paper."
+Image: placeholder — QR kiosk screen, teal gradient. Caption: "Scan. In. Out. No paper log."
+Image: placeholder — dashboard bars, peach gradient. Caption: "Numbers first. Decoration second."
+Image: placeholder — open flipbook, paper gradient. Caption: "A PDF that actually turns."
+Image: placeholder — dark portfolio scroll, copper gradient. Caption: "Calm beats loud."
+Image: placeholder — code lines, navy gradient. Caption: "One line, one test, one fix."
+Image: placeholder — clean tablet on a desk, soft blue gradient. Caption: "Shipped the calm version."
+Contact
+
+Email: rjverceles1@gmail.com
+Links: GitHub — https://github.com/Rigu3l ; Portfolio — https://rigu3l.github.io/
+I have no other verified social/profile links for you, so I didn't invent handles. Tell me any you want added.
+Form endpoint: none exists for this portfolio. No /api/brief. The form must fall back to mailto: rjverceles1@gmail.com
+Footer word
+
+Giant word: RJ VERCLES
+Sign-off line under it: Still curious. Still solving.
+
+=====================================================================
+# FILES THIS PART ADDS OR EXTENDS
+=====================================================================
+src/
+  content.js     about block, reveal engine (word-split blur, counters, kinetic lines), numbers band, contact form logic, link-list hovers, footer warp, anchors / deep links
+  mesh.js        WebGL mesh gradient (own canvas + own renderer, lazy)
+  works.js       works tunnel (own canvas + own renderer, lazy)
+  ig-phone.js    3D phone with canvas-textured feed (own canvas + own renderer, lazy)
+  cursor.js      3D voxel cursor + cursor-hint pill
+  styles/about.css   all page-sheet styles
+  (extend) lang.js dictionaries; main.js hooks (setBarColor, warm queue, #content cover check); index.html sections
+api/brief (optional serverless stub, see Contact)
+
+Script order at the end of index.html: main (module), cursor, works, mesh, content, ig-phone, music (all deferred / modules). Each module exports an init() and keeps its own disposal. Heavy work goes through the warm(fn) idle queue from Part 1 (desktop: after the loader; phones: lazily when the block nears the viewport, one context at a time).
+
+=====================================================================
+# THE PAGE SHEET: STRUCTURE
+=====================================================================
+<div class="content" id="content">
+  <section id="about">      greeting + intro + what I do
+  <section id="numbers">    sticky stats band that opens with a clip-path and runs horizontally, then fades into the mesh gradient
+  <section id="work">       works tunnel (pinned) + phone / social section
+  <section id="contact">    contact links + brief form + footer word
+</div>
+
+Look: Swiss-editorial. A 12-column grid (max width ~1600 px, gutters 24 px on desktop, 20 px on phones). A single thin vertical rule runs after column 4 on desktop; the greeting and labels sit in the narrow left zone, the large body text in the wide right zone. Hairlines in --line. Tiny mono micro-labels (JetBrains Mono, uppercase, letter-spacing .06em) for indices like "(01) About". Large type in the display face, body in Inter. The sheet has a rounded top (radius ~28-40 px), a soft upward shadow, and a --paper background. Every block has generous vertical rhythm (clamp(80px, 12vw, 200px)).
+
+Rising over the room: the sheet begins to peek ~10% at the end shot of the story and then slides up until it fully covers the canvas (Part 1 hides the canvas and pauses rendering at that moment).
+
+=====================================================================
+# 1. ABOUT / GREETING
+=====================================================================
+- A pinned greeting in the left zone (position: sticky) showing a small portrait (my own photo or an abstract placeholder), a greeting line ("Hi, I'm <name>") and my role / location. It stays while the right zone scrolls past
+- Right zone: a giant statement paragraph in the display or heavy Inter face, revealed word by word (see the reveal engine), followed by 2-3 body paragraphs and a "what I do" list: each item with an index number, a title, one line and a hairline between rows
+- A small link row below (e.g. "Selected work", "Contact") using the arrow icons from the SVG sprite (never text arrows)
+- All text comes from the dictionaries via data-i18n
+
+=====================================================================
+# 2. REVEAL ENGINE (content.js)
+=====================================================================
+One IntersectionObserver (+ a scroll-linked path where needed) drives all reveals; no GSAP, no scroll libraries.
+- WORD-SPLIT BLUR REVEAL: elements with data-reveal="words" are split into per-word spans (preserve whitespace, preserve inline links / <br>, re-split on language change). Each word starts at opacity 0, translateY(.35em), filter blur(10px) and transitions to clear with a stagger of 22 ms per word (cap total at ~700 ms). Use will-change only while animating. Reduced motion: no blur / translate, just a quick fade
+- LINE MASKS: block headings can use overflow:hidden lines that rise from translateY(110%) like the wall headlines
+- COUNTERS: data-count="N" with data-suffix / data-prefix; count from 0 with an ease-out over ~1.6 s when 60% visible, using tabular-nums so width does not jump; respect locale number formatting; under reduced motion show the final value at once
+- KINETIC DRIFTING LINES: a few oversized lines of display text (one per row, alternating direction) that drift horizontally with scroll (translateX = scrollProgress * +-12vw), set with a single rAF-throttled scroll handler writing CSS variables, never layout properties
+- FADE-UP for generic blocks (opacity + 24 px translate, 700 ms)
+- Everything is idempotent (a re-run after a language change or resize must not double-wrap)
+
+=====================================================================
+# 3. NUMBERS BAND
+=====================================================================
+- A tall section (~300vh) containing a sticky stage (100vh). Scroll progress inside the section drives everything (compute it from the section's rect each frame, via the shared rAF loop):
+  a) OPEN (0-.25): the stage's background is revealed through clip-path: inset(Y% X% round R) animating to inset(0) (a rounded window grows to full bleed); the background is a deep --ink navy
+  b) RUN (.25-.85): a wide row of stat cards / big numbers translates horizontally (translateX from 0 to -(rowWidth - viewportWidth)), each number is large display type with the light-text gradient, a mono label under it, hairline dividers. Counters trigger as each enters the viewport centre. On phones: the row becomes a vertical stack of stats within the sticky stage (simple fade/slide) because horizontal scroll-jacking is hostile on touch
+  c) FADE (.85-1): the stage fades to a flat navy that continues straight into the mesh gradient block, so there is no visible seam
+- Header uses .on-color while the stage is dark so the mix-blend-mode difference header remains legible
+- setBarColor(navy) while this band is under the browser bar on phones
+
+=====================================================================
+# 4. WEBGL MESH GRADIENT (mesh.js)
+=====================================================================
+- Own <canvas> and own WebGLRenderer (or raw WebGL), full width, ~100vh tall, inside a section that follows the numbers band. Renders only while visible (IntersectionObserver) and pauses when the tab is hidden
+- Fragment shader: 5 coloured blobs (my palette's gradient hues) orbiting on sin/cos paths with slightly different speeds; domain warping (2 passes of low-frequency noise offsets to the UVs, amplitude ~0.15); smooth blend by inverse-distance weights; a gentle vignette; ORDERED DITHER (Bayer 4x4 or blue-noise-ish hash, +-0.5/255) to kill banding; output sRGB
+- Render at 1/3 resolution (CSS-scaled up with image-rendering default smoothing) because it is a soft blur anyway; cap the frame rate to 30 fps on phones
+- Over the gradient, a short statement or a call to action in large display type (my words), with the light-text gradient. The top of the block continues the navy of the numbers band; the bottom blends to --paper or to the next dark block
+- Fallback: if WebGL fails, a CSS multi-radial-gradient background with a slow keyframe drift. Reduced motion: render one static frame
+
+=====================================================================
+# 5. WORKS TUNNEL (works.js)
+=====================================================================
+- A pinned section (~400-600vh depending on the number of works) with a sticky 100vh stage and its own WebGL canvas
+- Concept: the project cards are placed on a SPIRAL / helix along the z axis (each card rotated and offset around the tunnel axis), and the camera flies forward along the axis as the visitor scrolls, so cards stream past like walls of a tunnel. Cards are planes with rounded-corner alpha masks, showing the cover image (or a short video loop via VideoTexture for those that have one)
+- Chapters / stations: works are grouped by chapter name; the camera eases to a stop at each chapter ("station") so the current card faces the viewer, then continues. Show a small HUD: chapter label, project title, year and role (real HTML, bottom-left), a counter "03 / 10", and a dot nav on the right (click a dot to scroll to that station). The current project's title links to its URL (opens in a new tab with rel="noopener")
+- Zoom-blur post shader: a full-screen pass that applies a radial blur from the centre whose strength follows the camera's speed (scroll velocity, smoothed), plus a little chromatic split; this sells the flying feel and hides texture pop-in
+- Circular opening: when the section enters, the stage is revealed through a circular clip (clip-path: circle(r at 50% 50%) from 0 to 150%) tied to scroll progress, and mirrored on exit
+- Loading: use ImageBitmapLoader (createImageBitmap) with colorSpace sRGB, decode off the main thread; lazy-load the covers nearest the camera first and upload one texture per frame to avoid hitches; videos play only when their card is near the camera and pause otherwise
+- Dispose of textures that are far behind the camera on phones (keep a window of ~6 cards)
+- Accessibility: all works are also present as a real, visually-hidden <ol> list of links with titles and descriptions; a "view as list" toggle shows a plain responsive grid of cards (also the fallback for reduced motion, no WebGL, and for ?nostory). Keyboard: Arrow keys / Tab move between stations
+- Phones: fewer cards drawn (window of ~5), no zoom-blur, DPR capped at 1.5, vertical swipe works natively because scroll drives the camera
+
+=====================================================================
+# 6. THE 3D PHONE (ig-phone.js)
+=====================================================================
+- A section after the works: a headline (my words, e.g. about what I post / share) next to or above a 3D phone rendered in its own small WebGL canvas (lazy; created when within ~1 viewport, disposed or paused when far)
+- The phone: an extruded rounded-rectangle frame (ExtrudeGeometry with bevel, dark metal PBR), a screen plane with a canvas texture, a notch / dynamic-island pill, subtle reflections from a RoomEnvironment
+- The screen texture is an infinite vertical FEED I draw in a 2D canvas (e.g. 540x1170): status bar, a header, then stacked post cards (avatar, name, image area filled with the post image or gradient, caption, action icons drawn as simple vector shapes). My OWN generic social UI, no real brand logos or names. The feed scrolls by offsetting the draw (animated slowly and also driven by page scroll). Re-upload the texture only when the offset changes by >= 1 px; use needsUpdate sparingly (throttle to 30 fps)
+- FLOATING POSTS: 3-4 post cards (planes with rounded masks and drop shadows) orbit / float around the phone at different depths, bobbing on sin waves, parallaxing opposite to the phone
+- TILT: the phone eases toward the pointer (rotateY / rotateX up to ~14 deg, spring) on fine pointers; on touch devices the tilt is driven by scroll progress (a gentle -12 to +12 deg sweep). Smooth with 1 - exp(-dt * 5)
+- Phone browser-bar tint: when this section sits under the browser's bottom bar, call setBarColor with the section's background colour (sample it from CSS custom properties, not from pixels)
+- Reduced motion: static tilt, no floating
+
+=====================================================================
+# 7. CONTACT AND THE BRIEF FORM (content.js)
+=====================================================================
+- Large headline in the display face (my words), then a LINK LIST: email, social profiles, and "Book a call" (if I gave one). Each row: big text, an arrow icon from the sprite, a hairline, and a HOVER FILL: a background layer (accent) that scales up from the bottom (transform: scaleY(0 -> 1), transform-origin bottom, 350 ms cubic-bezier(.2,.8,.2,1)) while the text colour flips to --paper; on touch, a short :active version. Also a "copy email" micro-interaction (clipboard API with a fallback, label swaps to "Copied" for 1.6 s, aria-live announcement)
+- BRIEF FORM CARD: a rounded card with fields: name, email, "what are you building?" (textarea), optional budget range (radio chips), and a hidden honeypot field (visually hidden, aria-hidden, tabindex -1; if filled, silently succeed without sending). Fit-lines: each text input is a single line of big text whose font-size shrinks (down to 60%) so the content always fits the width without wrapping or horizontal scroll; re-fit on input and on resize (use canvas measureText or a hidden measuring span, rAF-throttled)
+- Validation: inline, per field, on blur and on submit; messages in both languages; error text uses role="alert"; focus the first invalid field; never use alert()
+- SUBMIT: POST JSON to /api/brief (fetch, 8 s timeout, AbortController). Disable the button, show a "Sending..." label; on success show a thank-you state in the card (and aria-live), reset the form; on network error or non-2xx, FALL BACK to a mailto: link built with encodeURIComponent (subject and body from the fields, truncated to ~1800 chars) and tell the user plainly what happened. Never lose the user's input
+- Provide an optional serverless stub at api/brief (Node / edge function, validates input, length limits, simple rate-limit hint, forwards to an email service via an environment variable; commented, with NO secrets in the repo). If I say there is no backend, ship only the mailto fallback and a README note
+
+=====================================================================
+# 8. FOOTER WORD (content.js)
+=====================================================================
+- A giant word / short phrase at the bottom of the page, display face, full-width (font-size set from the container width so it spans edge to edge), light-text gradient on the dark navy footer
+- Each letter is its own inline span containing an SVG-filtered layer: an inline <svg> with <filter id="warp-N"> using feTurbulence (baseFrequency ~0.012 0.02, numOctaves 2) feeding feDisplacementMap (scale animating 0 -> ~40 on hover / pointer proximity). Per-letter: scale = f(distance from the pointer to the letter's centre), eased (lerp .12), so letters near the cursor ripple and bend while the rest stay crisp; they relax when the pointer leaves. Animate the turbulence seed or baseFrequency slowly for a liquid feel
+- Performance guard: filters on huge text are expensive. Only enable while the footer is in view, only update the letters whose value changed by > 0.5, drop to a CSS translate / skew wobble per letter on phones and on browsers where the filter is slow (detect via a quick frame-time probe), and disable under reduced motion
+- Below the word: small mono credits row (copyright year computed in JS, "Built with care", a back-to-top link with an up arrow icon)
+
+=====================================================================
+# 9. THE VOXEL 3D CURSOR AND CURSOR-HINT PILL (cursor.js)
+=====================================================================
+(fine pointers only; none on touch)
+- A tiny dedicated transparent canvas (about 96x96 CSS px, fixed, pointer-events none, z-index above everything) following the pointer with a spring (k = 1 - exp(-dt * 18)). Inside: a small VOXEL arrow cursor assembled from ~20-30 cubes (InstancedMesh of RoundedBoxGeometry) in an arrow silhouette, accent-coloured with a lighter edge, lit by one key light + hemisphere; it leans toward its velocity (rotation.z / rotation.y from clamped vx, vy) and squashes slightly on press. Only renders while moving (stop the loop ~300 ms after the pointer stops) to save power
+- Contextual states set by data-cursor on elements: "link" (cubes expand slightly, arrow becomes a hand-like pointer shape), "drag" (the grab hand, used for the plug in Part 1), "view" (a labelled pill), "text" (a thin bar). The native cursor is hidden only where the voxel cursor is active, and restored if WebGL fails (then do NOT hide the native cursor)
+- CURSOR-HINT PILL: a small label pill that trails the cursor on a spring (offset +26, +14), shown for elements with data-hint="..." (e.g. "Drag to explore", "Click to open", "Hold to update" from Part 1). It scales .8 -> 1 on appear, tilts with speed (rotateY from vx * .03 capped 28 deg, rotateX from -vy * .03 capped 22, rotateZ vx * .008 capped 10) and is hidden on touch and under reduced motion
+- Reuse / reconcile with the cursor pill in Part 1's os.js (one shared pill component; do not duplicate)
+
+=====================================================================
+# 10. HEADER, ANCHORS, BAR COLOUR
+=====================================================================
+- Header (from Part 1): add nav links (About, Work, Contact) revealed after the story; clicking smooth-scrolls to the section; update the URL hash with history.replaceState; deep links (#about, #numbers, #work, #contact) already skip the story (Part 1) - make sure each section has an id and scroll-margin-top
+- .on-color toggles when the header overlaps a dark block (numbers band, mesh gradient, footer). Use an IntersectionObserver with rootMargin set to the header's height
+- setBarColor(css) is called whenever the block under the phone's bottom bar changes (about = paper, numbers = navy, mesh = its current dominant colour, work = ink, contact / footer = navy)
+- Active section highlight in the nav uses aria-current="true"
+
+=====================================================================
+# 11. i18n (lang.js dictionaries)
+=====================================================================
+- Extend the dictionary with EVERY page-sheet string, form message, aria-label, document title and meta description, in both languages. Keys are stable (e.g. about.title, numbers.1.label, form.err.email). data-i18n for text, data-i18n-attr="aria-label:key" for attributes, L(a, b) for JS-drawn strings
+- Language toggle shows the OTHER language's name; switching updates <html lang>, the title, meta description, og tags, and re-runs: word-split reveals (without replaying the animation), fit-lines, wall-text sizing (Part 1), canvas textures that contain text (CRT screen from Part 1, phone feed here), and any measured layout. Persist in localStorage (try / catch) and respect navigator.language on the first visit
+- Number formatting through Intl.NumberFormat per language; dates through Intl.DateTimeFormat
+
+=====================================================================
+# 12. ACCESSIBILITY AND REDUCED MOTION (page sheet)
+=====================================================================
+- Semantic landmarks: header, main, section with aria-labelledby, footer. One h1 (Part 1's sr-only h1), h2 per section, h3 for items. A "Skip to content" link first in the DOM that is visible on focus
+- Visible focus rings (2 px offset ring in the accent; on dark blocks in white). All interactive elements >= 44x44 px on touch
+- Colour contrast >= 4.5:1 for body text on every background (verify the light-text gradient on navy; the lightest stop must stay readable); do not convey state by colour alone (form errors have icons + text)
+- Reduced motion (prefers-reduced-motion and ?motion=reduce): no word-split blur (simple fade), counters jump to final, kinetic lines static, numbers band without horizontal scroll-jacking (vertical stack), mesh gradient single frame, works tunnel replaced by the plain grid, phone static, footer warp off, voxel cursor replaced by the native cursor
+- All media have alt text or are decorative (alt="" / aria-hidden). Video loops are muted, playsinline, and never autoplay when reduced motion is on
+- Works tunnel, mesh and phone canvases are aria-hidden with equivalent real content nearby
+
+=====================================================================
+# 13. PERFORMANCE
+=====================================================================
+- Budget: at most ONE heavy WebGL context actively rendering at a time besides Part 1's room (which is paused once #content covers it). Mesh, works and phone render only while in or near view; others are paused and, on phones, disposed (renderer.dispose() + forceContextLoss()) when far
+- One shared rAF loop for all scroll-linked DOM effects (read all rects first, then write styles, to avoid layout thrash); passive scroll / touch listeners; ResizeObserver instead of resize polling where possible
+- Images: serve responsive sizes (srcset or pre-generated 640 / 1280 / 1920 webp), width / height attributes, loading="lazy", decoding="async"; covers for the tunnel are pre-sized to <= 1024 px on phones
+- Fonts: preload the display face and the primary Inter subset; subset to the glyphs needed; font-display swap for Inter, block for the display face
+- CSS: content-visibility: auto with contain-intrinsic-size on offscreen sections where safe (NOT on the sticky stages); transform / opacity-only animations; no backdrop-filter on large areas on phones
+- Dynamic quality: reuse Part 1's quality tier; tier 0 disables mesh warping amplitude, zoom blur, footer filter and floating posts
+- Lighthouse targets on the static page sheet (?nostory): Performance >= 85 on mobile emulation, Accessibility >= 95, Best Practices >= 95, SEO >= 95
+- Meta: title, description, canonical, OG / Twitter images, theme-color, manifest, JSON-LD Person schema (my name, role, URL, sameAs). robots.txt and sitemap.xml. No third-party scripts
+
+=====================================================================
+# QUALITY BAR
+=====================================================================
+- The complete flow works end to end: story (Part 1) -> sheet rises -> about -> numbers band -> mesh gradient -> works tunnel -> phone -> contact / form -> footer -> back to top / replay story
+- No console errors or GL warnings; no layout shift when fonts load; no horizontal scrollbar at any width from 320 to 2560 px; no jank while scrolling at the seams (story -> sheet, numbers -> mesh, mesh -> works)
+- Correct behaviour with: language switch mid-page, window resize mid-page, browser back / forward with hashes, tab hidden / visible, WebGL unavailable (every WebGL block has a graceful non-WebGL fallback), JS disabled (the sr-only story text + the static page content remain readable, with a <noscript> note)
+- Clean, commented, modular code; all copy in dictionaries; all numbers / timings in constants at the top of each module; no leaked globals other than window.L and a tiny debug hook behind ?debug
+
+=====================================================================
+# DELIVERY FORMAT (IMPORTANT)
+=====================================================================
+Do NOT paste source code into the chat. Continue in the SAME project folder from Part 1, writing COMPLETE files (no "rest of code here"). Then:
+1. Run npm install and npm run build, and fix every error
+2. Run the dev server and test in a real browser (headless Chromium with GPU flags or the browser agent). Capture stills for: sheet rising over the room, about, each reveal state, numbers band (open / mid-run / fade), mesh gradient, works tunnel (circular opening, 2 stations, mid-flight with zoom blur, list view), phone (desktop tilt + feed), contact links hover, form (empty / error / success / mailto fallback), footer warp with the pointer over it, voxel cursor states. Do the same at 390x844 and with ?motion=reduce and ?nostory. Review the stills yourself and FIX visual bugs; do not just describe them. Check the console
+3. Update README.md: sections for Part 2 (file map, how to edit works / numbers / posts / copy, how to enable the /api/brief endpoint, accessibility notes, performance notes, a manual test checklist, a deployment note for any static host)
+4. Package the FINAL project (excluding node_modules and dist) as portfolio.zip, verify the archive listing, and deliver it as a downloadable file
+5. Final chat reply: a 3-5 line summary, the folder tree, and the run commands. No source code in the chat
+If you cannot create files or a ZIP in this environment, say so in one sentence and stop instead of pasting code.
+
+=====================================================================
+# HOW TO WORK
+=====================================================================
+First, open the existing Part 1 project and read its README, main.js, index.html and style tokens so that everything integrates (timeline constants, setBarColor, warm queue, quality tier, #content cover check, i18n helper). Write a short plan: module list, the page-sheet scroll map in vh / px, seams and risks (multiple WebGL contexts, mobile memory, sticky + clip-path performance, pinned sections on iOS Safari). Then build in this order, testing and capturing stills after each:
+(1) page-sheet grid, tokens, about section, header nav, anchors
+(2) reveal engine (words, counters, kinetic lines)
+(3) numbers band (open / run / fade, phone variant)
+(4) mesh gradient
+(5) works tunnel (+ list fallback)
+(6) 3D phone + floating posts
+(7) contact links, brief form, /api/brief stub, mailto fallback
+(8) footer word warp
+(9) voxel cursor + cursor-hint pill (reconcile with Part 1)
+(10) i18n completion, accessibility, reduced motion, performance pass, meta / SEO, README, ZIP

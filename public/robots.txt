@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rigu3l.github.io/sitemap.xml

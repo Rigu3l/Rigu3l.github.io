@@ -1,0 +1,16 @@
+{
+  "name": "Rj Verceles — Full Stack Developer & Web Designer",
+  "short_name": "Rj Verceles",
+  "description": "Interactive 3D portfolio of Rj Verceles from Zambales. I don't decorate — I solve the task.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1020",
+  "theme_color": "#0B1020",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

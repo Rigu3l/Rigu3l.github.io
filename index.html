@@ -1,1137 +1,829 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-geo="PH-ZMB">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Riguel Aleje — Full Stack Developer Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0B1020" id="theme-color-meta" />
+    <script src="/src/lang.js"></script>
+    <title>Rj Verceles — Full Stack Developer &amp; Web Designer · Zambales</title>
     <meta
       name="description"
-      content="Scroll-driven interactive portfolio of Riguel Aleje, Full Stack Developer based in Olongapo City, Zambales. Specializing in React, Angular, PHP, MySQL, and JavaScript."
+      content="Interactive 3D portfolio of Rj Verceles, Full Stack Developer &amp; Web Designer from Zambales. I don't decorate — I solve the task."
     />
-    <meta name="theme-color" content="#090A0F" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-    <!-- Open Graph / Social -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Riguel Aleje — Full Stack Developer Portfolio" />
+    <meta property="og:title" content="Rj Verceles — Full Stack Developer &amp; Web Designer" />
     <meta
       property="og:description"
-      content="Scroll-driven interactive portfolio of Riguel Aleje, Full Stack Developer based in Olongapo City, Zambales. Built with GSAP, Lenis, and Three.js."
+      content="It all starts with curiosity. I don't decorate — I solve the task: so people notice it, and so it works."
     />
-    <meta property="og:site_name" content="Riguel Aleje" />
-    <meta property="og:image" content="/og.svg" />
-
-    <!-- Twitter Card -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rigu3l.github.io/" />
+    <meta property="og:image" content="/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Riguel Aleje — Full Stack Developer Portfolio" />
+    <meta name="twitter:title" content="Rj Verceles — Full Stack Developer &amp; Web Designer" />
     <meta
       name="twitter:description"
-      content="Full Stack Developer in Olongapo City, Zambales — React, Angular, PHP, MySQL, JavaScript."
+      content="Interactive 3D portfolio story of Rj Verceles from Zambales."
     />
-    <meta name="twitter:image" content="/og.svg" />
-
-    <!-- Google Fonts: Preload Display + Body + Mono with font-display: swap -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-    />
-
-    <!-- Schema.org Person JSON-LD -->
+    <link rel="canonical" href="https://rigu3l.github.io/" />
+    <link rel="preload" href="/assets/fonts/anton.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/src/styles/style.css" />
+    <link rel="stylesheet" href="/src/styles/os.css" />
+    <link rel="stylesheet" href="/src/styles/about.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
-        "name": "Riguel Aleje",
-        "jobTitle": "Full Stack Developer",
+        "name": "Rj Verceles",
+        "jobTitle": "Full Stack Developer & Web Designer",
+        "url": "https://rigu3l.github.io/",
+        "email": "mailto:rjverceles1@gmail.com",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Olongapo City",
           "addressRegion": "Zambales",
           "addressCountry": "PH"
         },
-        "email": "mailto:riguel.aleje.dev@gmail.com",
-        "knowsAbout": ["React", "Angular", "PHP", "MySQL", "JavaScript", "Full Stack Web Development"],
         "sameAs": [
-          "https://github.com/riguelaleje",
-          "https://linkedin.com/in/riguelaleje",
-          "https://codepen.io/riguelaleje",
-          "https://instagram.com/riguelaleje"
+          "https://github.com/Rigu3l",
+          "https://rigu3l.github.io/"
         ]
       }
     </script>
   </head>
-  <body>
-    <!-- Accessibility Skip Link -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+  <body id="top">
+    <!-- Accessible Skip-to-Content Link -->
+    <a href="#content" class="skip-to-content" data-i18n="ui.skipToContent" data-cursor="link">Skip to content</a>
 
-    <!-- Top Scroll Progress Bar (CSS scroll-timeline where supported, GSAP fallback) -->
-    <div class="scroll-progress-bar" aria-hidden="true"></div>
+    <!-- Hidden inline SVG sprite with 4 icons: north-east arrow, right arrow, down arrow, redo -->
+    <svg class="svg-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="i-ne" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 17L17 7" />
+        <path d="M8 7H17V16" />
+      </symbol>
+      <symbol id="i-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12H19" />
+        <path d="M13 6L19 12L13 18" />
+      </symbol>
+      <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 5V19" />
+        <path d="M6 13L12 19L18 13" />
+      </symbol>
+      <symbol id="i-redo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 7V13H15" />
+        <path d="M3 17C4.5 11.5 9.5 8 15.2 8.5C17.5 8.7 19.5 9.8 21 11.5L21 13" />
+      </symbol>
+    </svg>
 
-    <!-- Subtle Film Grain Overlay -->
-    <div class="grain-overlay" aria-hidden="true"></div>
-
-    <!-- Custom Cursor (Desktop Fine Pointer Only) -->
-    <div id="custom-cursor" class="custom-cursor" aria-hidden="true">
-      <div id="cursor-dot" class="custom-cursor__dot"></div>
-      <div id="cursor-ring" class="custom-cursor__ring">
-        <span id="cursor-label" class="custom-cursor__label"></span>
+    <!-- Loader -->
+    <div id="loader" aria-live="polite">
+      <div class="loader-glow" id="loader-glow" aria-hidden="true"></div>
+      <div class="loader-top">
+        <span class="loader-status" id="loader-status">Curious?</span>
+        <span class="loader-file" id="loader-file">boot/curiosity.sys</span>
       </div>
+      <div class="loader-pct" id="loader-pct">0%</div>
     </div>
 
-    <!-- ======================================================================
-         0. PRELOADER & ENTER GATE
-         ====================================================================== -->
-    <aside
-      id="preloader"
-      class="preloader"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Portfolio Loading Screen"
-    >
-      <div class="preloader__top">
-        <span class="mono-label">Riguel Aleje · Full Stack Developer</span>
-        <span class="mono-label">Olongapo City, Zambales · GMT+8</span>
-      </div>
+    <!-- Fixed 3D Scene Canvas -->
+    <canvas id="scene" aria-hidden="true" data-testid="scene-canvas"></canvas>
 
-      <div class="preloader__center">
-        <div class="preloader__counter-row">
-          <span id="preloader-counter" class="preloader__counter">00</span>
-          <span class="preloader__percent">%</span>
-        </div>
-        <div class="preloader__bar-track" aria-hidden="true">
-          <div id="preloader-bar-fill" class="preloader__bar-fill"></div>
-        </div>
-        <p id="preloader-status" class="preloader__status" aria-live="polite">
-          Indexing MySQL tables that someone swore were temporary...
-        </p>
+    <!-- Hidden screen div & SR-only H1 and full story beats for screen readers & SEO -->
+    <div class="screen" aria-hidden="true"></div>
+    <h1 class="sr-only" data-i18n="sr.h1">
+      Rj Verceles — Full Stack Developer &amp; Web Designer in Zambales. I don't decorate — I solve the task.
+    </h1>
+    <section class="sr-only" aria-label="Interactive Story Transcript">
+      <p data-i18n="beat.1">It all starts with curiosity. I kept asking how a drawing becomes something people can actually use.</p>
+      <p data-i18n="beat.2">I started on paper, in Zambales. A sketch, a pencil, a problem to solve — not decoration.</p>
+      <p data-i18n="beat.3">Then the desk got glossy. Bright, loud, impressive — and hard to use. Beauty for beauty's sake doesn't sell.</p>
+      <p data-i18n="beat.4">I don't decorate. I solve the task: so people notice it, and so it works.</p>
+      <p data-i18n="beat.5">One launch broke. Sketch not found. Blank page. The deadline didn't move.</p>
+      <p data-i18n="beat.6">I fixed it line by line. No magic, no excuses — test, fix, test again.</p>
+      <p data-i18n="beat.7">The calm version shipped. Not the loudest work — the one that worked. People used it, and it sold.</p>
+      <p data-i18n="beat.8">Still curious. Still solving. If you have a task, not just a pretty idea — let's build it.</p>
+    </section>
 
-        <div id="preloader-gate" class="preloader__gate">
-          <button
-            id="btn-enter-studio"
-            type="button"
-            class="btn-enter"
-            data-cursor-label="ENTER"
-          >
-            <span>Click to Enter</span>
-            <span aria-hidden="true">→</span>
-          </button>
-          <button
-            id="btn-preloader-sound"
-            type="button"
-            class="btn-sound-opt"
-            aria-pressed="true"
-          >
-            Sound: On (Recommended)
-          </button>
+    <!-- Top Header -->
+    <header class="top" id="top-header">
+      <div class="top-brand">
+        <a href="#top" class="logo-link" id="logo-top-link" aria-label="Rj Verceles — Scroll to top" data-cursor="link">RV</a>
+        <div class="brand-meta">
+          <span class="brand-name">Rj Verceles</span>
+          <span class="brand-role" data-i18n="header.role">Full Stack Developer &amp; Web Designer · Zambales</span>
         </div>
       </div>
 
-      <div class="preloader__top" style="border-bottom: none; border-top: 1px solid rgba(244,243,239,0.1); padding-top: 1rem; padding-bottom: 0;">
-        <span class="mono-label">React · Angular · PHP · MySQL · JavaScript</span>
-        <span class="mono-label">Press Enter to launch</span>
-      </div>
-    </aside>
+      <nav class="top-nav" aria-label="Section navigation">
+        <a href="#about" class="top-nav-link" data-section-link="about" data-i18n="nav.about" data-cursor="link">About</a>
+        <a href="#work" class="top-nav-link" data-section-link="work" data-i18n="nav.work" data-cursor="link">Work</a>
+        <a href="#contact" class="top-nav-link" data-section-link="contact" data-i18n="nav.contact" data-cursor="link">Contact</a>
+      </nav>
 
-    <!-- ======================================================================
-         1. FIXED MINIMAL NAVIGATION (Strict 3-Zone Top Bar Contract)
-         Zone 1: Single-line Brand Wordmark
-         Zone 2: 4–5 single-line Navigation Links
-         Zone 3: 1 Primary Action Button
-         ====================================================================== -->
-    <header id="site-header" class="site-header">
-      <div class="site-header__inner">
-        <!-- Zone 1: Brand Wordmark -->
-        <a
-          id="brand-wordmark"
-          href="#hero"
-          class="site-header__brand"
-          data-cursor-label="TOP"
-          title="Click 5 times for Zambales Overclock Easter Egg"
-        >
-          Riguel Aleje
-        </a>
-
-        <!-- Zone 2: 5 Concise Single-Line Navigation Links -->
-        <nav class="site-header__nav" aria-label="Primary Navigation">
-          <a href="#about" class="site-header__link" data-nav-link>About</a>
-          <a href="#work" class="site-header__link" data-nav-link>Work</a>
-          <a href="#skills" class="site-header__link" data-nav-link>Capabilities</a>
-          <a href="#pong-arcade" class="site-header__link" data-open-pong>Arcade</a>
-          <a href="#contact" class="site-header__link" data-nav-link>Contact</a>
-        </nav>
-
-        <!-- Zone 3: 1 Primary CTA -->
-        <a
-          href="#contact"
-          class="site-header__cta"
-          data-cursor-label="HIRE"
-        >
-          Start a Project
-        </a>
+      <div class="top-actions">
+        <button type="button" class="pill-btn" id="lang-toggle" aria-label="Switch language to Filipino" data-cursor="link">EN</button>
+        <button type="button" class="pill-btn" id="sound-toggle" aria-pressed="true" aria-label="Toggle sound" data-cursor="link">
+          <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span class="sound-label" data-i18n="header.sound">Sound</span>
+        </button>
       </div>
     </header>
 
-    <!-- Easter Egg Notification Toast -->
-    <div
-      id="easter-egg-toast"
-      hidden
-      role="status"
-      aria-live="polite"
-      style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:2200;padding:0.75rem 1.25rem;background:var(--accent);color:#090A0F;font-family:var(--font-mono);font-size:0.8125rem;font-weight:700;border-radius:var(--radius-sm);"
-    ></div>
+    <!-- 3D Wall Locked HTML Headlines Container -->
+    <div id="wall-stage"></div>
 
-    <!-- ======================================================================
-         MAIN CONTENT
-         ====================================================================== -->
-    <main id="main-content">
-      <!-- ====================================================================
-           2. HERO SECTION (2-Column Split + Full-Width Metadata Row Below)
-           ==================================================================== -->
-      <section id="hero" class="hero-section" aria-label="Introduction">
-        <div id="hero-inner" class="container" style="display:flex;flex-direction:column;justify-content:space-between;flex:1;gap:var(--space-lg);">
-          <!-- Top Utility Bar inside Hero (Section Readout + Sound & Theme Controls + Companion Bot) -->
-          <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;padding-bottom:var(--space-sm);border-bottom:1px solid var(--border-subtle);">
-            <div class="companion-bot" id="companion-bot" role="button" tabindex="0" aria-label="Interactive Studio Bot" data-cursor-label="POKE">
-              <div class="companion-bot__face" aria-hidden="true">
-                <span class="companion-bot__eye"></span>
-                <span class="companion-bot__eye"></span>
-              </div>
-              <span id="companion-bot-status" class="mono-label" style="color:var(--text-secondary);">
-                Hover or poke the orbital core. It judges unindexed SQL queries.
-              </span>
-            </div>
+    <!-- Story UI Layer (OS Layer placed on modern monitor) -->
+    <div id="os-mount"></div>
 
-            <div class="utility-pill-bar">
-              <span id="active-section-readout" class="mono-label" style="color:var(--accent);">
-                00 · Overview
-              </span>
-              <button
-                type="button"
-                class="btn-utility"
-                data-sound-toggle
-                aria-pressed="false"
-                aria-label="Toggle UI and ambient sound"
-              >
-                <span data-sound-label>Sound: Off</span>
-              </button>
-              <button
-                type="button"
-                class="btn-utility"
-                data-theme-toggle
-                aria-label="Toggle color theme"
-              >
-                Theme: Dark
-              </button>
-            </div>
-          </div>
+    <!-- Cursor-following pill (desktop) -->
+    <div class="cursor-pill" id="cursor-pill" aria-hidden="true" data-i18n="ui.hint.hold">Press and hold</div>
 
-          <!-- 2-Column Hero Split -->
-          <div class="hero-split">
-            <!-- Left Column: Editorial Headline + Lead Copy + CTAs -->
-            <div class="hero-copy">
-              <p class="mono-label" style="color:var(--accent);">
-                Riguel Aleje · Olongapo City, Zambales
-              </p>
-              <h1 id="hero-headline" class="display-hero">
-                Full Stack Developer
-              </h1>
-              <p id="hero-subline" class="body-xl" style="color:var(--text-secondary);max-width:34ch;">
-                Building systems that stay up past midnight so I do not have to. Fluent across React, Angular, PHP, and MySQL.
-              </p>
+    <!-- 3D Voxel Cursor Canvas (Fine Pointers) -->
+    <canvas id="voxel-cursor-canvas" width="96" height="96" aria-hidden="true"></canvas>
 
-              <div id="hero-actions" class="hero-Action-row">
-                <a href="#work" class="btn-primary" data-cursor-label="EXPLORE">
-                  <span class="text-roll">
-                    <span class="text-roll__inner" data-text="Explore Selected Work">
-                      Explore Selected Work
-                    </span>
-                  </span>
-                  <span aria-hidden="true">↓</span>
-                </a>
-                <a href="#contact" class="btn-secondary" data-cursor-label="CONTACT">
-                  <span class="text-roll">
-                    <span class="text-roll__inner" data-text="Commission a Build">
-                      Commission a Build
-                    </span>
-                  </span>
-                </a>
-              </div>
-            </div>
+    <!-- Skip & Hint Controls -->
+    <button type="button" class="skip" id="skip-btn" data-cursor="link">
+      <span data-i18n="ui.skip">Skip the story</span>
+      <svg aria-hidden="true"><use href="#i-down"></use></svg>
+    </button>
 
-            <!-- Right Column: Three.js WebGL Stage + Collapsible Bottom-Center HUD -->
-            <div class="hero-stage-wrap" aria-label="Interactive 3D Orbital Full-Stack Core">
-              <div id="hero-webgl-mount" class="hero-webgl-mount"></div>
+    <div class="hint" id="hint-pill" role="status" aria-live="polite">
+      <span id="hint-text" data-i18n="ui.hint.scroll">Scroll to look around</span>
+      <svg aria-hidden="true"><use href="#i-down"></use></svg>
+    </div>
+    <div class="sr-only" id="era-announcer" role="status" aria-live="polite" aria-atomic="true"></div>
 
-              <!-- Unified Collapsible Bottom Control Dock (Zero Viewport Occlusion) -->
-              <div id="hero-stage-hud" class="hero-stage-hud">
-                <button
-                  id="hud-collapse-toggle"
-                  type="button"
-                  class="hero-stage-hud__toggle"
-                  aria-label="Collapse or expand 3D core controls"
-                >
-                  ▾ Hide Controls
-                </button>
-                <div class="hero-stage-hud__bar">
-                  <label class="mono-label" for="hud-explode-range" style="display:flex;align-items:center;gap:0.5rem;">
-                    <span>Explode</span>
-                    <input
-                      id="hud-explode-range"
-                      type="range"
-                      min="0"
-                      max="1"
-                      step="0.02"
-                      value="0"
-                      data-cursor="hidden"
-                      style="width:78px;accent-color:var(--accent);"
-                    />
-                  </label>
-                  <div style="display:flex;align-items:center;gap:0.35rem;">
-                    <button type="button" class="btn-utility" data-finish-preset="obsidian" style="padding:0.25rem 0.55rem;min-height:28px;">
-                      Obsidian
-                    </button>
-                    <button type="button" class="btn-utility" data-finish-preset="titanium" style="padding:0.25rem 0.55rem;min-height:28px;">
-                      Titanium
-                    </button>
-                    <button type="button" class="btn-utility" data-finish-preset="copper" style="padding:0.25rem 0.55rem;min-height:28px;">
-                      Copper
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Full-Width 4-Column Hero Metadata Strip in Monospace -->
-          <div class="hero-meta-strip">
-            <div class="meta-item">
-              <span class="mono-label meta-item__label">Role</span>
-              <span class="meta-item__value">Full Stack Developer</span>
-            </div>
-            <div class="meta-item">
-              <span class="mono-label meta-item__label">Base</span>
-              <span class="meta-item__value">Zambales, Olongapo City (GMT+8)</span>
-            </div>
-            <div class="meta-item">
-              <span class="mono-label meta-item__label">Stack</span>
-              <span class="meta-item__value">React · Angular · PHP · MySQL · JS</span>
-            </div>
-            <div class="meta-item">
-              <span class="mono-label meta-item__label">Availability</span>
-              <span class="meta-item__value">Available for Work · Q4/Q1</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           3. INTRO / ABOUT SECTION (Scroll-Scrubbed Text + Stats Strip)
-           ==================================================================== -->
-      <section id="about" class="about-section section-pad" aria-labelledby="about-heading">
-        <div class="container">
-          <div class="section-header-row">
-            <h2 id="about-heading" class="mono-label" style="color:var(--accent);">
-              01. Editorial &amp; Philosophy
-            </h2>
-            <p class="mono-label" style="color:var(--text-muted);">
-              Clean schemas · Calm interfaces · Zero drama
-            </p>
-          </div>
-
-          <div class="about-grid">
-            <!-- Scroll-Scrubbed Bio Paragraph -->
-            <p id="about-scrub-paragraph" class="display-xl" style="font-weight:600;line-height:1.22;">
-              I am a Full Stack Developer based in Olongapo City, Zambales, spending my days turning tangled business requirements into calm, fast software across React, Angular, PHP, and MySQL. I enjoy the whole stack—from obsession-level UI motion in JavaScript to database schemas that will not catch fire the moment more than twelve people log in at once. Most of my career has been an ongoing negotiation between making interfaces feel effortless and making sure the backend never becomes a cautionary tale.
-            </p>
-
-            <!-- Secondary Mask-Up Principles -->
-            <div class="about-secondary-grid">
-              <article class="about-secondary-card">
-                <p class="mono-label" style="color:var(--accent);margin-bottom:0.5rem;">
-                  01 · Database First
-                </p>
-                <p class="body-md" style="color:var(--text-secondary);">
-                  I write clean SQL and verify the EXPLAIN plan before blaming the network, and semantic HTML before reaching for a 400KB dependency.
-                </p>
-              </article>
-
-              <article class="about-secondary-card">
-                <p class="mono-label" style="color:var(--accent);margin-bottom:0.5rem;">
-                  02 · Framework Pragmatism
-                </p>
-                <p class="body-md" style="color:var(--text-secondary);">
-                  Equally at home architecting greenfield React &amp; Angular frontends or untangling decade-old PHP monoliths without breaking production.
-                </p>
-              </article>
-
-              <article class="about-secondary-card">
-                <p class="mono-label" style="color:var(--accent);margin-bottom:0.5rem;">
-                  03 · Zambales to Worldwide
-                </p>
-                <p class="body-md" style="color:var(--text-secondary);">
-                  Operating out of Olongapo City (GMT+8), shipping async-friendly codebases with clear documentation and zero mystery commits.
-                </p>
-              </article>
-            </div>
-
-            <!-- Quantitative Stats Strip (Tabular Numerals, Claim-to-Proof Adjacency) -->
-            <div class="stats-strip" aria-label="Experience and Performance Metrics">
-              <div>
-                <div
-                  class="display-xl tabular-nums"
-                  style="color:var(--text-primary);margin-bottom:0.35rem;"
-                  data-stat-target="6"
-                  data-stat-decimals="0"
-                  data-stat-suffix="+"
-                >
-                  6+
-                </div>
-                <p class="body-md" style="font-weight:600;">Years shipping production web systems</p>
-                <p class="mono-label" style="color:var(--text-muted);margin-top:0.25rem;">
-                  From maritime logistics to multi-branch ERP platforms
-                </p>
-              </div>
-
-              <div>
-                <div
-                  class="display-xl tabular-nums"
-                  style="color:var(--text-primary);margin-bottom:0.35rem;"
-                  data-stat-target="42"
-                  data-stat-decimals="0"
-                  data-stat-suffix=""
-                >
-                  42
-                </div>
-                <p class="body-md" style="font-weight:600;">End-to-end applications deployed</p>
-                <p class="mono-label" style="color:var(--text-muted);margin-top:0.25rem;">
-                  React · Angular · PHP · MySQL architectures
-                </p>
-              </div>
-
-              <div>
-                <div
-                  class="display-xl tabular-nums"
-                  style="color:var(--text-primary);margin-bottom:0.35rem;"
-                  data-stat-target="99.9"
-                  data-stat-decimals="1"
-                  data-stat-suffix="%"
-                >
-                  99.9%
-                </div>
-                <p class="body-md" style="font-weight:600;">Uptime across managed client schemas</p>
-                <p class="mono-label" style="color:var(--text-muted);margin-top:0.25rem;">
-                  Zero unscheduled Friday afternoon outages
-                </p>
-              </div>
-
-              <div>
-                <div
-                  class="display-xl tabular-nums"
-                  style="color:var(--text-primary);margin-bottom:0.35rem;"
-                  data-stat-target="180"
-                  data-stat-decimals="0"
-                  data-stat-suffix="ms"
-                >
-                  180ms
-                </div>
-                <p class="body-md" style="font-weight:600;">Median API + MySQL query budget</p>
-                <p class="mono-label" style="color:var(--text-muted);margin-top:0.25rem;">
-                  Because loading spinners are an admission of defeat
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           4. MARQUEE BREAK (Scroll-Velocity-Reactive)
-           ==================================================================== -->
-      <section class="marquee-section" aria-label="Technical Stack Ribbon">
-        <div id="marquee-track" class="marquee-track">
-          <div class="marquee-item">
-            REACT <span>·</span> ANGULAR <span>·</span> PHP 8 <span>·</span> MYSQL <span>·</span> JAVASCRIPT <span>·</span> ZERO UNINDEXED JOINS <span>·</span> OLONGAPO CITY <span>·</span>
-          </div>
-          <div class="marquee-item" aria-hidden="true">
-            REACT <span>·</span> ANGULAR <span>·</span> PHP 8 <span>·</span> MYSQL <span>·</span> JAVASCRIPT <span>·</span> ZERO UNINDEXED JOINS <span>·</span> OLONGAPO CITY <span>·</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           5. SELECTED WORK: PINNED CHAPTERED SHOWCASE (The Centerpiece)
-           ==================================================================== -->
-      <section id="work" class="work-section" aria-labelledby="work-heading">
-        <!-- Desktop Pinned Viewport -->
-        <div id="work-pinned-viewport" class="work-pinned-viewport container">
-          <div class="work-top-bar">
-            <div>
-              <h2 id="work-heading" class="mono-label" style="color:var(--accent);">
-                02. Selected Work — Chaptered Archive (2024–2026)
-              </h2>
-            </div>
-
-            <!-- Chapter Index Buttons: 01 02 03 04 05 -->
-            <div class="work-chapter-nav" role="tablist" aria-label="Project Chapters">
-              <button type="button" class="work-chapter-btn is-active" data-chapter-btn="0" aria-current="step">
-                01
-              </button>
-              <button type="button" class="work-chapter-btn" data-chapter-btn="1">
-                02
-              </button>
-              <button type="button" class="work-chapter-btn" data-chapter-btn="2">
-                03
-              </button>
-              <button type="button" class="work-chapter-btn" data-chapter-btn="3">
-                04
-              </button>
-              <button type="button" class="work-chapter-btn" data-chapter-btn="4">
-                05
-              </button>
-            </div>
-          </div>
-
-          <!-- Scrubbed Chapter Progress Line -->
-          <div class="work-progress-track" aria-hidden="true">
-            <div id="work-progress-fill" class="work-progress-fill"></div>
-          </div>
-
-          <!-- Desktop Interactive Stage -->
-          <div class="work-stage work-desktop-deck">
-            <!-- Left Panel: Chapter Editorial Metadata & Controls -->
-            <div class="work-info-panel">
-              <div style="display:flex;flex-direction:column;gap:var(--space-sm);">
-                <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
-                  <span id="work-active-chapter" class="mono-label" style="color:var(--accent);">
-                    Chapter 01 · 2026
-                  </span>
-                  <span id="work-active-client" class="mono-label" style="color:var(--text-muted);">
-                    Subic Bay Maritime Logistics · Lead Full Stack Developer
-                  </span>
-                </div>
-
-                <h3 id="work-active-title" class="display-xl" style="margin-top:0.25rem;">
-                  Subic Vessel Telemetry
-                </h3>
-
-                <p id="work-active-summary" class="body-lg" style="color:var(--text-secondary);">
-                  Real-time berth scheduling, AIS transponder tracking, and container manifest dispatch engine cutting port turnaround bottlenecks by 28%.
-                </p>
-              </div>
-
-              <div style="display:flex;flex-direction:column;gap:var(--space-md);margin-top:var(--space-md);">
-                <!-- Quantitative Proof & Unboxed Stack Metadata (Zero-Pill Discipline) -->
-                <div style="padding-top:var(--space-sm);border-top:1px solid var(--border-subtle);">
-                  <p id="work-active-metrics" class="mono-label tabular-nums" style="color:var(--text-primary);margin-bottom:0.35rem;">
-                    14,820 TEU Monthly · 42ms p95 Query Latency · Zero Lock Contention
-                  </p>
-                  <p id="work-active-tags" class="mono-label" style="color:var(--text-muted);">
-                    React · PHP 8.3 · MySQL Spatial · JavaScript
-                  </p>
-                </div>
-
-                <!-- Controls Row: Visit Site + Inspect Architecture + Prev/Next Arrows -->
-                <div class="work-controls-row">
-                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem;">
-                    <a
-                      id="work-active-link"
-                      href="https://github.com/riguelaleje/subic-vessel-telemetry"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="btn-primary"
-                      data-cursor-label="VISIT"
-                    >
-                      <span class="text-roll">
-                        <span class="text-roll__inner" data-text="Visit Repository ↗">
-                          Visit Repository ↗
-                        </span>
-                      </span>
-                    </a>
-                    <button
-                      id="work-inspect-btn"
-                      type="button"
-                      class="btn-secondary"
-                      data-inspect-index="0"
-                      data-cursor-label="INSPECT"
-                    >
-                      Inspect Architecture
-                    </button>
-                  </div>
-
-                  <div class="work-arrow-group" aria-label="Chapter Navigation Arrows">
-                    <button
-                      id="work-prev-btn"
-                      type="button"
-                      class="work-arrow-btn"
-                      aria-label="Previous project chapter"
-                    >
-                      ←
-                    </button>
-                    <button
-                      id="work-next-btn"
-                      type="button"
-                      class="work-arrow-btn"
-                      aria-label="Next project chapter"
-                    >
-                      →
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Right Panel: Draggable / Swipeable Cover Artwork Stage -->
-            <div
-              id="work-media-panel"
-              class="work-media-panel"
-              data-cursor="drag"
-              data-cursor-label="DRAG / VIEW"
-              role="region"
-              aria-label="Project Cover Gallery — Drag left or right to switch chapters, or click to inspect"
-            >
-              <div class="work-slide-stack">
-                <figure class="work-slide is-active" data-work-slide="0">
-                  <img
-                    src="/images/work-01.svg"
-                    width="1600"
-                    height="1000"
-                    alt="Subic Bay Vessel Telemetry radar and berth throughput dashboard"
-                    referrerpolicy="no-referrer"
-                  />
-                </figure>
-                <figure class="work-slide" data-work-slide="1">
-                  <img
-                    src="/images/work-02.svg"
-                    width="1600"
-                    height="1000"
-                    alt="KapeZambales Roastery ERP bean temperature roast curve and barista ticket queue"
-                    loading="lazy"
-                    referrerpolicy="no-referrer"
-                  />
-                </figure>
-                <figure class="work-slide" data-work-slide="2">
-                  <img
-                    src="/images/work-03.svg"
-                    width="1600"
-                    height="1000"
-                    alt="Central Luzon Grid Telemetry 230kV substation transmission topology"
-                    loading="lazy"
-                    referrerpolicy="no-referrer"
-                  />
-                </figure>
-                <figure class="work-slide" data-work-slide="3">
-                  <img
-                    src="/images/work-04.svg"
-                    width="1600"
-                    height="1000"
-                    alt="Obra Headless Publishing Engine editorial spread and AST block schema"
-                    loading="lazy"
-                    referrerpolicy="no-referrer"
-                  />
-                </figure>
-                <figure class="work-slide" data-work-slide="4">
-                  <img
-                    src="/images/work-05.svg"
-                    width="1600"
-                    height="1000"
-                    alt="Talon Double-Entry Payroll and Disbursement Ledger journal table"
-                    loading="lazy"
-                    referrerpolicy="no-referrer"
-                  />
-                </figure>
-              </div>
-            </div>
-          </div>
-
-          <!-- Mobile Graceful Degradation Stack (<= 768px: No pinning, clean vertical stack) -->
-          <div class="work-mobile-list" aria-label="Selected Projects Mobile List">
-            <article class="work-mobile-card">
-              <img src="/images/work-01.svg" width="1600" height="1000" alt="Subic Vessel Telemetry" loading="lazy" referrerpolicy="no-referrer" />
-              <div class="work-mobile-card__body">
-                <span class="mono-label" style="color:var(--accent);">Chapter 01 · 2026 · Lead Full Stack Developer</span>
-                <h3 class="heading-lg">Subic Vessel Telemetry</h3>
-                <p class="body-md" style="color:var(--text-secondary);">
-                  Real-time berth scheduling, AIS transponder tracking, and container manifest dispatch engine cutting port turnaround bottlenecks by 28%.
-                </p>
-                <p class="mono-label" style="color:var(--text-muted);">React · PHP 8.3 · MySQL Spatial · JavaScript</p>
-                <div style="display:flex;gap:0.75rem;padding-top:0.5rem;">
-                  <a href="https://github.com/riguelaleje/subic-vessel-telemetry" target="_blank" rel="noopener noreferrer" class="btn-primary">Visit Repository ↗</a>
-                  <button type="button" class="btn-secondary" data-inspect-index="0">Details</button>
-                </div>
-              </div>
-            </article>
-
-            <article class="work-mobile-card">
-              <img src="/images/work-02.svg" width="1600" height="1000" alt="KapeZambales ERP & POS" loading="lazy" referrerpolicy="no-referrer" />
-              <div class="work-mobile-card__body">
-                <span class="mono-label" style="color:var(--accent);">Chapter 02 · 2025 · Full Stack Architect</span>
-                <h3 class="heading-lg">KapeZambales ERP &amp; POS</h3>
-                <p class="body-md" style="color:var(--text-secondary);">
-                  Offline-resilient point-of-sale and green-bean inventory ledger across four specialty cafés that survives regional brownouts.
-                </p>
-                <p class="mono-label" style="color:var(--text-muted);">Angular · PHP · MySQL · IndexedDB</p>
-                <div style="display:flex;gap:0.75rem;padding-top:0.5rem;">
-                  <a href="https://github.com/riguelaleje/kapezambales-erp-pos" target="_blank" rel="noopener noreferrer" class="btn-primary">Visit Repository ↗</a>
-                  <button type="button" class="btn-secondary" data-inspect-index="1">Details</button>
-                </div>
-              </div>
-            </article>
-
-            <article class="work-mobile-card">
-              <img src="/images/work-03.svg" width="1600" height="1000" alt="Luzon Grid Telemetry" loading="lazy" referrerpolicy="no-referrer" />
-              <div class="work-mobile-card__body">
-                <span class="mono-label" style="color:var(--accent);">Chapter 03 · 2025 · Full Stack &amp; UI Engineer</span>
-                <h3 class="heading-lg">Luzon Grid Telemetry</h3>
-                <p class="body-md" style="color:var(--text-secondary);">
-                  Substation load-balancing visualizer and harmonic anomaly alert system ingesting 1.2 million sensor readings per day.
-                </p>
-                <p class="mono-label" style="color:var(--text-muted);">React · Canvas 2D · PHP · MySQL Partitioning</p>
-                <div style="display:flex;gap:0.75rem;padding-top:0.5rem;">
-                  <a href="https://github.com/riguelaleje/luzon-grid-telemetry" target="_blank" rel="noopener noreferrer" class="btn-primary">Visit Repository ↗</a>
-                  <button type="button" class="btn-secondary" data-inspect-index="2">Details</button>
-                </div>
-              </div>
-            </article>
-
-            <article class="work-mobile-card">
-              <img src="/images/work-04.svg" width="1600" height="1000" alt="Obra Publishing Engine" loading="lazy" referrerpolicy="no-referrer" />
-              <div class="work-mobile-card__body">
-                <span class="mono-label" style="color:var(--accent);">Chapter 04 · 2024 · Creator &amp; Full Stack Developer</span>
-                <h3 class="heading-lg">Obra Publishing Engine</h3>
-                <p class="body-md" style="color:var(--text-secondary);">
-                  Schema-driven headless CMS and archival monograph reader designed for editors who care about kerning.
-                </p>
-                <p class="mono-label" style="color:var(--text-muted);">React · JavaScript · PHP REST · MySQL Full-Text</p>
-                <div style="display:flex;gap:0.75rem;padding-top:0.5rem;">
-                  <a href="https://github.com/riguelaleje/obra-publishing-engine" target="_blank" rel="noopener noreferrer" class="btn-primary">Visit Repository ↗</a>
-                  <button type="button" class="btn-secondary" data-inspect-index="3">Details</button>
-                </div>
-              </div>
-            </article>
-
-            <article class="work-mobile-card">
-              <img src="/images/work-05.svg" width="1600" height="1000" alt="Talon Ledger & Payroll" loading="lazy" referrerpolicy="no-referrer" />
-              <div class="work-mobile-card__body">
-                <span class="mono-label" style="color:var(--accent);">Chapter 05 · 2024 · Senior Full Stack Developer</span>
-                <h3 class="heading-lg">Talon Ledger &amp; Payroll</h3>
-                <p class="body-md" style="color:var(--text-secondary);">
-                  Idempotent double-entry payroll disbursement engine calculating net settlements for 5,000+ employees in 1.84 seconds.
-                </p>
-                <p class="mono-label" style="color:var(--text-muted);">Angular · PHP · MySQL InnoDB · JavaScript</p>
-                <div style="display:flex;gap:0.75rem;padding-top:0.5rem;">
-                  <a href="https://github.com/riguelaleje/talon-ledger-payroll" target="_blank" rel="noopener noreferrer" class="btn-primary">Visit Repository ↗</a>
-                  <button type="button" class="btn-secondary" data-inspect-index="4">Details</button>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           6. PROCESS / CAPABILITIES (Sticky Stacking Cards)
-           ==================================================================== -->
-      <section id="skills" class="skills-section section-pad" aria-labelledby="skills-heading">
-        <div class="container">
-          <div class="section-header-row">
-            <h2 id="skills-heading" class="mono-label" style="color:var(--accent);">
-              03. Capabilities &amp; Full Stack Architecture
-            </h2>
-            <p class="mono-label" style="color:var(--text-muted);">
-              End-to-end execution from database schema to 60fps UI
-            </p>
-          </div>
-
-          <div class="skills-stack">
-            <!-- Card 01 -->
-            <article class="skill-card">
-              <div>
-                <span class="mono-label" style="color:var(--accent);">01. Frontend Architecture</span>
-                <h3 class="heading-lg" style="margin-top:0.4rem;">React &amp; Angular Interfaces</h3>
-              </div>
-              <div>
-                <p class="body-lg" style="color:var(--text-secondary);">
-                  Component architectures that balance rich editorial motion with strict state predictability. Whether it is a reactive React dashboard or a large-scale Angular enterprise portal, the UI responds in under 100ms and never traps keyboard users.
-                </p>
-                <p class="mono-label" style="color:var(--text-muted);margin-top:1rem;">
-                  SPA Architecture · State Machines · GSAP Choreography · WCAG AA Accessibility
-                </p>
-              </div>
-              <div style="text-align:right;">
-                <span class="mono-label tabular-nums" style="color:var(--text-primary);">
-                  95+ Lighthouse Budget
-                </span>
-              </div>
-            </article>
-
-            <!-- Card 02 -->
-            <article class="skill-card">
-              <div>
-                <span class="mono-label" style="color:var(--accent);">02. Backend Engineering</span>
-                <h3 class="heading-lg" style="margin-top:0.4rem;">PHP 8 &amp; Service Design</h3>
-              </div>
-              <div>
-                <p class="body-lg" style="color:var(--text-secondary);">
-                  Pragmatic, battle-tested PHP backends engineered with strict typing, idempotent endpoints, and predictable error contracts. I build services that are easy to debug at 2 AM—though the whole point is never getting woken up at 2 AM.
-                </p>
-                <p class="mono-label" style="color:var(--text-muted);margin-top:1rem;">
-                  Idempotent REST APIs · Queue Workers · Legacy Modernization · Role-Based Auth
-                </p>
-              </div>
-              <div style="text-align:right;">
-                <span class="mono-label tabular-nums" style="color:var(--text-primary);">
-                  &lt; 45ms Controller Overhead
-                </span>
-              </div>
-            </article>
-
-            <!-- Card 03 -->
-            <article class="skill-card">
-              <div>
-                <span class="mono-label" style="color:var(--accent);">03. Data Layer &amp; Persistence</span>
-                <h3 class="heading-lg" style="margin-top:0.4rem;">MySQL Schema &amp; Query Tuning</h3>
-              </div>
-              <div>
-                <p class="body-lg" style="color:var(--text-secondary);">
-                  A fast frontend means nothing if the database is doing full-table scans behind the scenes. I design normalized schemas, composite indexes, and ACID-compliant transactions that scale gracefully past millions of rows.
-                </p>
-                <p class="mono-label" style="color:var(--text-muted);margin-top:1rem;">
-                  EXPLAIN Plan Profiling · Zero-Downtime Migrations · Double-Entry Ledgers · Spatial Indexes
-                </p>
-              </div>
-              <div style="text-align:right;">
-                <span class="mono-label tabular-nums" style="color:var(--text-primary);">
-                  10x–40x Legacy Query Speedup
-                </span>
-              </div>
-            </article>
-
-            <!-- Card 04 -->
-            <article class="skill-card">
-              <div>
-                <span class="mono-label" style="color:var(--accent);">04. Systems Craft</span>
-                <h3 class="heading-lg" style="margin-top:0.4rem;">Performance &amp; Offline Resilience</h3>
-              </div>
-              <div>
-                <p class="body-lg" style="color:var(--text-secondary);">
-                  From GPU-composited transforms and WebGL device guards to edge caching and offline IndexedDB queues, every layer is profiled on real hardware—not just a developer laptop on gigabit fiber.
-                </p>
-                <p class="mono-label" style="color:var(--text-muted);margin-top:1rem;">
-                  LCP &lt; 2.0s · Reduced-Motion Fallbacks · Offline Sync · Automated Build Audits
-                </p>
-              </div>
-              <div style="text-align:right;">
-                <span class="mono-label tabular-nums" style="color:var(--text-primary);">
-                  CLS 0.00 Guaranteed
-                </span>
-              </div>
-            </article>
-          </div>
+    <!-- Scroll Track with 10 Chapters -->
+    <main class="track" id="track">
+      <section class="chapter" data-chapter="screen" aria-hidden="true"></section>
+      <section class="chapter" data-chapter="room" aria-hidden="true"></section>
+      <section class="chapter" data-chapter="hold" aria-hidden="true"></section>
+      <section class="chapter" data-chapter="modern" aria-hidden="true"></section>
+      <section class="chapter" data-chapter="tech" aria-hidden="true"></section>
+      <section class="chapter" data-chapter="push" aria-hidden="true"></section>
+      <section class="chapter" data-chapter="os" aria-hidden="true"></section>
+      <section class="chapter" data-chapter="dialogs" aria-hidden="true"></section>
+      <section class="chapter" data-chapter="exit" aria-hidden="true"></section>
+      <section class="chapter" data-chapter="end">
+        <div class="finale-wrap" id="finale-wrap">
+          <p class="finale-lead" data-i18n="end.lead">Still curious. Still solving.</p>
+          <h2 class="finale-big" data-i18n="end.big">
+            IF YOU HAVE A TASK, NOT JUST A PRETTY IDEA — LET'S BUILD IT.
+          </h2>
+          <button type="button" class="replay-btn" id="replay-btn" data-cursor="link">
+            <svg aria-hidden="true"><use href="#i-redo"></use></svg>
+            <span data-i18n="ui.replay">Watch the story again</span>
+          </button>
         </div>
       </section>
     </main>
 
     <!-- ======================================================================
-         7. FOOTER / CONTACT + LIVE CLOCK + COPY EMAIL + PONG ARCADE LAUNCHER
+         PART 2 — THE PAGE SHEET (#content)
          ====================================================================== -->
-    <footer id="contact" class="site-footer" aria-labelledby="footer-headline">
-      <div class="container">
-        <!-- Top Status Strip: Availability + Live Local Time in Olongapo City -->
-        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;padding-bottom:var(--space-lg);border-bottom:1px solid var(--border-subtle);margin-bottom:var(--space-xl);">
-          <div class="availability-indicator">
-            <span class="availability-mark" aria-hidden="true"></span>
-            <span>Available for work · Full Stack Commissions &amp; Advisory</span>
+    <div class="content" id="content">
+      <!-- 1. ABOUT / GREETING SECTION (#about) -->
+      <section id="about" class="about-section" aria-labelledby="about-greeting-title">
+        <div class="sheet-container swiss-grid about-grid">
+          <div class="about-left">
+            <div class="about-sticky" data-reveal="fade">
+              <div class="about-avatar-card" aria-hidden="true">
+                <svg class="about-avatar-svg" viewBox="0 0 124 124" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="124" height="124" rx="18" fill="url(#rvGrad)" />
+                  <circle cx="96" cy="28" r="34" fill="#7C5CFF" fill-opacity="0.22" />
+                  <circle cx="28" cy="98" r="38" fill="#2DD4BF" fill-opacity="0.18" />
+                  <!-- Architectural grid lines -->
+                  <line x1="0" y1="31" x2="124" y2="31" stroke="#F5F2EB" stroke-opacity="0.08" />
+                  <line x1="0" y1="93" x2="124" y2="93" stroke="#F5F2EB" stroke-opacity="0.08" />
+                  <line x1="31" y1="0" x2="31" y2="124" stroke="#F5F2EB" stroke-opacity="0.08" />
+                  <line x1="93" y1="0" x2="93" y2="124" stroke="#F5F2EB" stroke-opacity="0.08" />
+                  <!-- Stylized portrait silhouette + RV emblem -->
+                  <circle cx="62" cy="46" r="16" stroke="#F5F2EB" stroke-width="2.4" fill="#141B33" />
+                  <path d="M34 98C34 81.4 46.5 70 62 70C77.5 70 90 81.4 90 98" stroke="#2DD4BF" stroke-width="2.6" stroke-linecap="round" />
+                  <text x="62" y="51" text-anchor="middle" fill="#F5F2EB" font-family="Anton, sans-serif" font-size="14" letter-spacing="1">RV</text>
+                  <defs>
+                    <linearGradient id="rvGrad" x1="0" y1="0" x2="124" y2="124" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#1B2444" />
+                      <stop offset="1" stop-color="#0B1020" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <span class="section-kicker" data-i18n="about.kicker">01 / Profile</span>
+              <h2 class="about-greeting" id="about-greeting-title" data-i18n="about.greeting">Hi, I'm Rj.</h2>
+              <p class="about-role" data-i18n="about.role">Full Stack Developer &amp; Web Designer · Zambales</p>
+              <div class="about-status">
+                <span class="about-status-dot" aria-hidden="true"></span>
+                <span>Zambales, PH · UTC+8</span>
+              </div>
+            </div>
           </div>
 
-          <div
-            id="footer-live-clock"
-            class="mono-label tabular-nums"
-            style="color:var(--text-secondary);"
-            aria-live="off"
-          >
-            Olongapo City, Zambales · 00:00:00 GMT+8
-          </div>
-        </div>
-
-        <div class="footer-grid">
-          <!-- Left Column: Giant Headline + Magnetic CTA + Copy Email -->
-          <div style="display:flex;flex-direction:column;gap:var(--space-md);">
-            <h2 id="footer-headline" class="display-hero">
-              Let us build software that works.
-            </h2>
-            <p class="body-lg" style="color:var(--text-secondary);">
-              Need a full stack developer who speaks fluent React, Angular, PHP, and MySQL without blaming the database? Send a note.
+          <div class="about-right">
+            <p class="about-statement" data-reveal="words" data-i18n="about.statement">
+              I'm a Full Stack Developer and Web Designer from Zambales. I turn messy, real-world tasks into clean websites and working web apps — from the first sketch on paper to the database behind the screen.
             </p>
 
-            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:1rem;padding-top:var(--space-xs);">
-              <a
-                id="footer-magnetic-cta"
-                href="mailto:riguel.aleje.dev@gmail.com?subject=Project%20Inquiry%20for%20Riguel%20Aleje"
-                class="btn-primary"
-                data-cursor-label="EMAIL"
-              >
-                <span>Start a Project</span>
-                <span aria-hidden="true">↗</span>
-              </a>
-
-              <button
-                type="button"
-                class="btn-secondary"
-                data-open-pong
-                data-cursor-label="PLAY"
-              >
-                Still bored? Play Pong
-              </button>
-            </div>
-
-            <!-- Email Readout + Copy Button -->
-            <div class="copy-email-group">
-              <span class="mono-label" style="font-size:0.9375rem;color:var(--text-primary);">
-                riguel.aleje.dev@gmail.com
-              </span>
-              <button
-                id="btn-copy-email"
-                type="button"
-                class="btn-utility"
-                data-cursor-label="COPY"
-                aria-live="polite"
-              >
-                <span id="copy-email-label">Copy Email</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Right Column: Elsewhere Socials + Stack Metadata + Back to Top -->
-          <div style="display:flex;flex-direction:column;justify-content:space-between;gap:var(--space-lg);">
-            <div>
-              <p class="mono-label" style="color:var(--text-muted);margin-bottom:var(--space-sm);">
-                Elsewhere
+            <div class="about-body-cols" data-reveal="fade">
+              <p class="about-body-p" data-i18n="about.body1">
+                Most projects don't fail because the colors were wrong — they fail because the workflow was confusing, the queries were slow, or the deadline met an untested launch. I care about how a page looks, and I care even more about whether people can finish what they came to do.
               </p>
-              <ul style="display:flex;flex-direction:column;gap:0.75rem;">
-                <li>
-                  <a
-                    href="https://github.com/riguelaleje"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="heading-md"
-                    data-cursor-label="GITHUB"
-                    style="display:inline-flex;align-items:center;gap:0.75rem;"
-                  >
-                    <span class="text-roll">
-                      <span class="text-roll__inner" data-text="GitHub ↗">GitHub ↗</span>
-                    </span>
-                    <span class="mono-label" style="color:var(--text-muted);">@riguelaleje</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://linkedin.com/in/riguelaleje"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="heading-md"
-                    data-cursor-label="LINKEDIN"
-                    style="display:inline-flex;align-items:center;gap:0.75rem;"
-                  >
-                    <span class="text-roll">
-                      <span class="text-roll__inner" data-text="LinkedIn ↗">LinkedIn ↗</span>
-                    </span>
-                    <span class="mono-label" style="color:var(--text-muted);">/in/riguelaleje</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://codepen.io/riguelaleje"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="heading-md"
-                    data-cursor-label="CODEPEN"
-                    style="display:inline-flex;align-items:center;gap:0.75rem;"
-                  >
-                    <span class="text-roll">
-                      <span class="text-roll__inner" data-text="CodePen ↗">CodePen ↗</span>
-                    </span>
-                    <span class="mono-label" style="color:var(--text-muted);">@riguelaleje</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://instagram.com/riguelaleje"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="heading-md"
-                    data-cursor-label="IG"
-                    style="display:inline-flex;align-items:center;gap:0.75rem;"
-                  >
-                    <span class="text-roll">
-                      <span class="text-roll__inner" data-text="Instagram ↗">Instagram ↗</span>
-                    </span>
-                    <span class="mono-label" style="color:var(--text-muted);">@riguelaleje</span>
-                  </a>
-                </li>
-              </ul>
+              <p class="about-body-p" data-i18n="about.body2">
+                From campus attendance and clearance systems to hotel management modules and digital flipbooks, I build end-to-end with HTML/CSS, JavaScript, PHP, MySQL, and Supabase.
+              </p>
             </div>
 
-            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;padding-top:var(--space-md);border-top:1px solid var(--border-subtle);">
-              <button
-                id="btn-back-to-top"
-                type="button"
-                class="btn-secondary"
-                data-cursor-label="TOP"
-              >
-                <span class="text-roll">
-                  <span class="text-roll__inner" data-text="Back to Top ↑">Back to Top ↑</span>
-                </span>
-              </button>
+            <div class="what-i-do" data-reveal="fade">
+              <h3 class="what-i-do-heading" data-i18n="about.whatHeading">What I do</h3>
+              <ol class="what-list">
+                <li class="what-item">
+                  <span class="what-idx">01</span>
+                  <span class="what-label" data-i18n="about.what1">Full-stack web applications (PHP, MySQL, Supabase, JavaScript)</span>
+                </li>
+                <li class="what-item">
+                  <span class="what-idx">02</span>
+                  <span class="what-label" data-i18n="about.what2">Frontend interfaces, responsive layouts &amp; interactive web design</span>
+                </li>
+                <li class="what-item">
+                  <span class="what-idx">03</span>
+                  <span class="what-label" data-i18n="about.what3">Dashboards, role-based portals &amp; campus/operations systems</span>
+                </li>
+                <li class="what-item">
+                  <span class="what-idx">04</span>
+                  <span class="what-label" data-i18n="about.what4">Database modeling, authentication &amp; reporting exports</span>
+                </li>
+                <li class="what-item">
+                  <span class="what-idx">05</span>
+                  <span class="what-label" data-i18n="about.what5">Debugging, refactoring &amp; shipping under real deadlines</span>
+                </li>
+              </ol>
+            </div>
 
-              <a
-                href="/portfolio.zip"
-                download="riguel-aleje-portfolio.zip"
-                class="btn-utility"
-                data-cursor-label="ZIP"
-              >
-                Download Source (.zip)
+            <div class="about-links-row" data-reveal="fade">
+              <a href="#work" class="editorial-cta primary" data-cursor="link" data-hint="Explore projects">
+                <span data-i18n="about.linkWork">Selected work</span>
+                <svg aria-hidden="true"><use href="#i-down"></use></svg>
+              </a>
+              <a href="#contact" class="editorial-cta" data-cursor="link" data-hint="Send a brief">
+                <span data-i18n="about.linkBrief">Start a brief</span>
+                <svg aria-hidden="true"><use href="#i-right"></use></svg>
               </a>
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- Bottom Witty Copyright Line -->
-        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;padding-top:var(--space-md);">
-          <p class="mono-label" style="color:var(--text-muted);">
-            © 2026 Riguel Aleje. Handcrafted in Olongapo City, Zambales. Powered by caffeine, indexed foreign keys, and unreasonable attention to kerning.
-          </p>
-          <p class="mono-label" style="color:var(--text-muted);">
-            React · Angular · PHP · MySQL · JavaScript
-          </p>
+      <!-- 2. KINETIC DRIFTING LINES -->
+      <div class="kinetic-band" id="kinetic-band" aria-hidden="true">
+        <div class="kinetic-line" data-kinetic-dir="1">
+          I DON'T DECORATE — <span class="kinetic-accent">I SOLVE THE TASK</span> — I DON'T DECORATE — <span class="kinetic-accent">I SOLVE THE TASK</span>
+        </div>
+        <div class="kinetic-line outline" data-kinetic-dir="-1">
+          SO PEOPLE NOTICE IT — <span class="kinetic-accent">AND SO IT WORKS</span> — SO PEOPLE NOTICE IT — <span class="kinetic-accent">AND SO IT WORKS</span>
         </div>
       </div>
-    </footer>
 
-    <!-- ======================================================================
-         8. PROJECT CASE STUDY LIGHTBOX MODAL
-         ====================================================================== -->
-    <div
-      id="case-study-modal"
-      class="case-modal"
-      role="dialog"
-      aria-modal="true"
-      aria-hidden="true"
-      aria-labelledby="case-modal-title"
-    >
-      <div class="case-modal__dialog" data-lenis-prevent>
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border-subtle);">
-          <span id="case-modal-meta" class="mono-label" style="color:var(--accent);">
-            Case Study Architecture
-          </span>
-          <button
-            id="case-modal-close"
-            type="button"
-            class="btn-utility"
-            aria-label="Close case study modal"
-          >
-            Close (ESC) ✕
-          </button>
-        </div>
+      <!-- 3. NUMBERS BAND (#numbers) — 300vh Section with 100vh Sticky Stage -->
+      <section id="numbers" class="numbers-section" aria-labelledby="numbers-heading">
+        <div class="numbers-sticky">
+          <div class="numbers-card-shell" id="numbers-shell">
+            <div class="numbers-header">
+              <div>
+                <span class="section-kicker" data-i18n="numbers.kicker">By the numbers</span>
+                <h2 class="numbers-title" id="numbers-heading" data-i18n="numbers.heading">
+                  Proof in shipped modules, not buzzwords.
+                </h2>
+              </div>
+            </div>
 
-        <h3 id="case-modal-title" class="display-xl">Project Title</h3>
+            <div class="numbers-track-wrap">
+              <div class="numbers-track" id="numbers-track">
+                <article class="number-stat-card">
+                  <span class="number-stat-index">01 / 04</span>
+                  <div class="number-stat-value" data-count="6" data-suffix="">6</div>
+                  <p class="number-stat-label" data-i18n="numbers.stat1">Projects built</p>
+                </article>
 
-        <div style="border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--border-subtle);">
-          <img
-            id="case-modal-image"
-            src="/images/work-01.svg"
-            width="1600"
-            height="1000"
-            alt="Project architecture preview"
-            referrerpolicy="no-referrer"
-          />
-        </div>
+                <article class="number-stat-card">
+                  <span class="number-stat-index">02 / 04</span>
+                  <div class="number-stat-value" data-count="25" data-suffix="">25</div>
+                  <p class="number-stat-label" data-i18n="numbers.stat2">Features in my largest module, the Management Department</p>
+                </article>
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--space-md);">
-          <div>
-            <p class="mono-label" style="color:var(--text-muted);margin-bottom:0.35rem;">Problem &amp; Outcome</p>
-            <p id="case-modal-summary" class="body-md" style="color:var(--text-secondary);"></p>
-          </div>
-          <div>
-            <p class="mono-label" style="color:var(--text-muted);margin-bottom:0.35rem;">Full Stack Architecture</p>
-            <p id="case-modal-arch" class="body-md" style="color:var(--text-secondary);"></p>
+                <article class="number-stat-card">
+                  <span class="number-stat-index">03 / 04</span>
+                  <div class="number-stat-value" data-count="150" data-suffix="+">150+</div>
+                  <p class="number-stat-label" data-i18n="numbers.stat3">Student records in the CelCheck test data</p>
+                </article>
+
+                <article class="number-stat-card">
+                  <span class="number-stat-index">04 / 04</span>
+                  <div class="number-stat-value" data-count="5" data-suffix="">5</div>
+                  <p class="number-stat-label" data-i18n="numbers.stat4">Core tools I build with: HTML/CSS, JavaScript, PHP, MySQL, Supabase</p>
+                </article>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;padding-top:1rem;border-top:1px solid var(--border-subtle);">
-          <span id="case-modal-metrics" class="mono-label tabular-nums" style="color:var(--accent);"></span>
-          <a
-            id="case-modal-live"
-            href="https://github.com/riguelaleje"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-primary"
-          >
-            Visit Repository ↗
+      <!-- 4. WEBGL MESH GRADIENT SECTION (#mesh-section) -->
+      <section id="mesh-section" class="mesh-section" aria-labelledby="mesh-heading-title">
+        <canvas id="mesh-canvas" aria-hidden="true"></canvas>
+        <div class="mesh-overlay" data-reveal="fade">
+          <span class="section-kicker" data-i18n="mesh.kicker">Craft &amp; Architecture</span>
+          <h2 class="mesh-headline" id="mesh-heading-title" data-i18n="mesh.headline">
+            Calm interfaces on the surface. Solid schemas underneath.
+          </h2>
+          <p class="mesh-sub" data-i18n="mesh.sub">
+            Every project below started with a real operational bottleneck and ended with a working tool people could use on day one.
+          </p>
+          <a href="#work" class="editorial-cta primary" data-cursor="link" data-hint="Enter the tunnel">
+            <span data-i18n="mesh.cta">Explore the 6 projects</span>
+            <svg aria-hidden="true"><use href="#i-down"></use></svg>
           </a>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <!-- ======================================================================
-         9. FULL-SCREEN PONG MINI-GAME OVERLAY ("Zambales Pong Arcade")
-         ====================================================================== -->
-    <div
-      id="pong-modal"
-      class="pong-modal"
-      role="dialog"
-      aria-modal="true"
-      aria-hidden="true"
-      aria-labelledby="pong-modal-title"
-    >
-      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;">
-        <div>
-          <span class="mono-label" style="color:var(--accent);">Zambales Arcade · Break-Time Protocol</span>
-          <h2 id="pong-modal-title" class="heading-md">Riguel (You) vs. Olongapo Query Bot</h2>
-        </div>
-
-        <div style="display:flex;align-items:center;gap:1.5rem;">
-          <div class="mono-label tabular-nums" style="font-size:1.25rem;">
-            YOU <span id="pong-score-player" style="color:var(--accent);">00</span> :
-            <span id="pong-score-ai">00</span> AI
+      <!-- 5. WORKS TUNNEL (#work) — 500vh Pinned 3D Helix + List View Toggle -->
+      <section id="work" class="works-section" aria-labelledby="works-main-heading">
+        <div class="works-sticky" id="works-sticky">
+          <div class="works-stage-clip" id="works-stage-clip">
+            <canvas id="works-canvas" aria-hidden="true" data-cursor="drag" data-hint="Scroll through works"></canvas>
           </div>
-          <button id="pong-reset-btn" type="button" class="btn-utility">Reset Score</button>
-          <button
-            id="pong-close-btn"
-            type="button"
-            class="btn-enter"
-            style="padding:0.55rem 1.1rem;min-height:40px;font-size:0.875rem;"
-          >
-            Exit Arcade (ESC) ✕
-          </button>
+
+          <div class="works-topbar">
+            <div class="works-title-wrap">
+              <span class="section-kicker" data-i18n="works.kicker">02 / Selected Work</span>
+              <h2 class="works-heading" id="works-main-heading" data-i18n="works.heading">
+                Six shipped systems, publishing tools &amp; portfolios
+              </h2>
+            </div>
+            <button
+              type="button"
+              class="works-view-toggle"
+              id="works-view-toggle"
+              aria-pressed="false"
+              data-cursor="link"
+            >
+              <span id="works-view-toggle-label" data-i18n="works.viewList">View as list</span>
+            </button>
+          </div>
+
+          <!-- Tunnel HUD (updates as camera stops at each station 01 / 06 .. 06 / 06) -->
+          <div class="works-hud" id="works-hud">
+            <div class="works-hud-card" aria-live="polite">
+              <div class="works-hud-meta">
+                <span id="works-hud-counter">01 / 06</span>
+                <span>·</span>
+                <span id="works-hud-category">Systems</span>
+                <span>·</span>
+                <span id="works-hud-year">2026</span>
+              </div>
+              <a
+                href="https://github.com/Rigu3l/Computer-Lab-Log"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="works-hud-title-link"
+                id="works-hud-title-link"
+                data-cursor="view"
+                data-hint="Open project"
+              >
+                <span id="works-hud-title">CelCheck</span>
+                <svg aria-hidden="true" width="22" height="22"><use href="#i-ne"></use></svg>
+              </a>
+              <div class="works-hud-role" id="works-hud-role">Leader, Programmer (Front/Back End)</div>
+              <p class="works-hud-desc" id="works-hud-desc">
+                An attendance tracking system for our school's computer laboratory that logs student entries by scanning a QR code on their ID.
+              </p>
+              <div class="works-hud-actions">
+                <a
+                  href="https://github.com/Rigu3l/Computer-Lab-Log"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="works-visit-btn"
+                  id="works-hud-cta"
+                  data-cursor="view"
+                  data-hint="Open project"
+                >
+                  <span data-i18n="works.visitRepo">Open project</span>
+                  <svg aria-hidden="true"><use href="#i-ne"></use></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="works-dots" id="works-dots" role="tablist" aria-label="Project stations">
+              <button type="button" class="works-dot-btn" data-station="0" aria-current="true" aria-label="Project 1: CelCheck" data-cursor="link">01</button>
+              <button type="button" class="works-dot-btn" data-station="1" aria-label="Project 2: Celtech College Online Clearance Dashboard" data-cursor="link">02</button>
+              <button type="button" class="works-dot-btn" data-station="2" aria-label="Project 3: Hotel Management System" data-cursor="link">03</button>
+              <button type="button" class="works-dot-btn" data-station="3" aria-label="Project 4: Manuazine" data-cursor="link">04</button>
+              <button type="button" class="works-dot-btn" data-station="4" aria-label="Project 5: Arjuwey" data-cursor="link">05</button>
+              <button type="button" class="works-dot-btn" data-station="5" aria-label="Project 6: Rigu3l.github.io Portfolio" data-cursor="link">06</button>
+            </div>
+          </div>
+
+          <!-- Accessible / Toggleable <ol> List of all 6 Works -->
+          <div class="works-list-wrap" id="works-list-wrap">
+            <ol class="works-list-grid" id="works-list">
+              <li class="work-card-item">
+                <div class="work-card-preview" style="background: linear-gradient(135deg, #2D1B69 0%, #7C5CFF 100%); color: #F5F2EB;">
+                  <span class="work-card-meta"><span>01 / 06</span><span>Systems</span></span>
+                  <div class="work-card-preview-title">CelCheck</div>
+                </div>
+                <div class="work-card-body">
+                  <div class="work-card-meta"><span>2026</span><span>Systems</span></div>
+                  <h3 class="work-card-title">CelCheck</h3>
+                  <div class="work-card-role">Leader, Programmer (Front/Back End)</div>
+                  <p class="work-card-desc">
+                    An attendance tracking system for our school's computer laboratory that logs student entries by scanning a QR code on their ID.
+                  </p>
+                  <a href="https://github.com/Rigu3l/Computer-Lab-Log" target="_blank" rel="noopener noreferrer" class="work-card-link" data-cursor="view">
+                    <span data-i18n="works.visitRepo">Open project</span>
+                    <svg aria-hidden="true"><use href="#i-ne"></use></svg>
+                  </a>
+                </div>
+              </li>
+
+              <li class="work-card-item">
+                <div class="work-card-preview" style="background: linear-gradient(135deg, #0D1B3E 0%, #1E3A8A 100%); color: #F5F2EB;">
+                  <span class="work-card-meta"><span>02 / 06</span><span>Systems</span></span>
+                  <div class="work-card-preview-title">Online Clearance</div>
+                </div>
+                <div class="work-card-body">
+                  <div class="work-card-meta"><span>2026</span><span>Systems</span></div>
+                  <h3 class="work-card-title">Celtech College Online Clearance Dashboard</h3>
+                  <div class="work-card-role">Designer and Developer</div>
+                  <p class="work-card-desc">
+                    A web-based clearance management dashboard for Celtech College with role-based views, student clearance tracking, signatory approvals, dark mode, and CSV export.
+                  </p>
+                  <a href="https://github.com/Rigu3l/online-clearance" target="_blank" rel="noopener noreferrer" class="work-card-link" data-cursor="view">
+                    <span data-i18n="works.visitRepo">Open project</span>
+                    <svg aria-hidden="true"><use href="#i-ne"></use></svg>
+                  </a>
+                </div>
+              </li>
+
+              <li class="work-card-item">
+                <div class="work-card-preview" style="background: linear-gradient(135deg, #FFF5EB 0%, #FFD6E0 100%); color: #1F1624;">
+                  <span class="work-card-meta" style="color: #9D174D;"><span>03 / 06</span><span>Systems</span></span>
+                  <div class="work-card-preview-title">Hotel Management</div>
+                </div>
+                <div class="work-card-body">
+                  <div class="work-card-meta"><span>2026</span><span>Systems</span></div>
+                  <h3 class="work-card-title">Hotel Management System — Management Department Module</h3>
+                  <div class="work-card-role">Management Department owner</div>
+                  <p class="work-card-desc">
+                    My department module inside our group's Hotel Management System, covering 25 management features in PHP and MySQL.
+                  </p>
+                  <a href="https://github.com/Rigu3l/management-department" target="_blank" rel="noopener noreferrer" class="work-card-link" data-cursor="view">
+                    <span data-i18n="works.visitRepo">Open project</span>
+                    <svg aria-hidden="true"><use href="#i-ne"></use></svg>
+                  </a>
+                </div>
+              </li>
+
+              <li class="work-card-item">
+                <div class="work-card-preview" style="background: linear-gradient(135deg, #FAF8F5 0%, #E5E0D8 100%); color: #141413;">
+                  <span class="work-card-meta" style="color: #0F766E;"><span>04 / 06</span><span>Publishing</span></span>
+                  <div class="work-card-preview-title">Manuazine</div>
+                </div>
+                <div class="work-card-body">
+                  <div class="work-card-meta"><span>2026</span><span>Publishing</span></div>
+                  <h3 class="work-card-title">Manuazine</h3>
+                  <div class="work-card-role">Designer and Developer</div>
+                  <p class="work-card-desc">
+                    An interactive digital manual and zine web app with a page-turning flipbook experience.
+                  </p>
+                  <a href="https://github.com/Rigu3l/Manuazine" target="_blank" rel="noopener noreferrer" class="work-card-link" data-cursor="view">
+                    <span data-i18n="works.visitRepo">Open project</span>
+                    <svg aria-hidden="true"><use href="#i-ne"></use></svg>
+                  </a>
+                </div>
+              </li>
+
+              <li class="work-card-item">
+                <div class="work-card-preview" style="background: linear-gradient(135deg, #090A0F 0%, #181B26 100%); color: #F5F2EB;">
+                  <span class="work-card-meta"><span>05 / 06</span><span>Portfolios</span></span>
+                  <div class="work-card-preview-title">Arjuwey</div>
+                </div>
+                <div class="work-card-body">
+                  <div class="work-card-meta"><span>2026</span><span>Portfolios</span></div>
+                  <h3 class="work-card-title">Arjuwey</h3>
+                  <div class="work-card-role">Designer and Developer</div>
+                  <p class="work-card-desc">
+                    A personal creative portfolio website showcasing web design and frontend craft.
+                  </p>
+                  <a href="https://github.com/Rigu3l/Arjuwey" target="_blank" rel="noopener noreferrer" class="work-card-link" data-cursor="view">
+                    <span data-i18n="works.visitRepo">Open project</span>
+                    <svg aria-hidden="true"><use href="#i-ne"></use></svg>
+                  </a>
+                </div>
+              </li>
+
+              <li class="work-card-item">
+                <div class="work-card-preview" style="background: linear-gradient(135deg, #0B1020 0%, #1E1B4B 100%); color: #F5F2EB;">
+                  <span class="work-card-meta"><span>06 / 06</span><span>Portfolios</span></span>
+                  <div class="work-card-preview-title">Rigu3l.github.io</div>
+                </div>
+                <div class="work-card-body">
+                  <div class="work-card-meta"><span>2026</span><span>Portfolios</span></div>
+                  <h3 class="work-card-title">Rigu3l.github.io Portfolio</h3>
+                  <div class="work-card-role">Designer and Developer</div>
+                  <p class="work-card-desc">
+                    My developer portfolio hosted on GitHub Pages, introducing my projects, skills, and contact links.
+                  </p>
+                  <a href="https://rigu3l.github.io/" target="_blank" rel="noopener noreferrer" class="work-card-link" data-cursor="view">
+                    <span data-i18n="works.visitRepo">Open project</span>
+                    <svg aria-hidden="true"><use href="#i-ne"></use></svg>
+                  </a>
+                </div>
+              </li>
+            </ol>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div class="pong-canvas-wrap">
-        <canvas
-          id="pong-canvas"
-          width="800"
-          height="450"
-          aria-label="Pong Mini-Game Canvas. Use W/S, Up/Down arrows, or drag with mouse/touch to move the left paddle."
-        ></canvas>
-      </div>
+      <!-- 6. 3D PHONE SECTION (#social-section) -->
+      <section id="social-section" class="social-section" aria-labelledby="social-heading-title">
+        <div class="sheet-container swiss-grid social-grid">
+          <div class="social-copy" data-reveal="fade">
+            <span class="section-kicker" data-i18n="social.kicker">03 / Studio Feed</span>
+            <h2 class="social-heading" id="social-heading-title" data-i18n="social.heading">
+              Snapshots from the build log
+            </h2>
+            <p class="social-sub" data-i18n="social.sub">
+              Sketches, QR scanner prototypes, clearance dashboards, and late-night schema tests from Zambales.
+            </p>
+            <ul class="social-tags" aria-label="Feed topics">
+              <li class="social-tag-item">01 · Sketchbook &amp; Pencil</li>
+              <li class="social-tag-item">02 · CelCheck QR Log</li>
+              <li class="social-tag-item">03 · Clearance Dashboard</li>
+              <li class="social-tag-item">04 · Manuazine Flipbook</li>
+              <li class="social-tag-item">05 · Arjuwey Dark UI</li>
+              <li class="social-tag-item">06 · 25 Hotel Modules</li>
+              <li class="social-tag-item">07 · Calm Shipped Build</li>
+            </ul>
+          </div>
 
-      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;">
-        <p id="pong-status-text" class="mono-label" style="color:var(--text-secondary);">
-          Controls: Move cursor / touch-drag inside court, or press W / S / Arrow Up / Arrow Down.
-        </p>
-        <p class="mono-label" style="color:var(--text-muted);">
-          Page scroll &amp; ambient audio paused while in arcade
-        </p>
-      </div>
+          <div class="social-stage-col">
+            <canvas
+              id="phone-canvas"
+              aria-label="Interactive 3D phone displaying Rj Verceles's studio feed"
+              data-cursor="drag"
+              data-hint="Move to tilt"
+            ></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. CONTACT SECTION & BRIEF FORM (#contact) -->
+      <section id="contact" class="contact-section" aria-labelledby="contact-heading-title">
+        <div class="sheet-container swiss-grid">
+          <div class="contact-left" data-reveal="fade">
+            <span class="section-kicker" data-i18n="contact.kicker">04 / Contact &amp; Brief</span>
+            <h2 class="contact-heading" id="contact-heading-title" data-i18n="contact.heading">
+              Have a real task to solve? Let's build it.
+            </h2>
+            <p class="contact-lead" data-i18n="contact.lead">
+              Reach out directly by email, inspect my code on GitHub, or send a project brief using the form.
+            </p>
+
+            <div class="contact-links-list">
+              <div class="contact-link-row">
+                <a
+                  href="mailto:rjverceles1@gmail.com"
+                  class="contact-link-meta"
+                  style="text-decoration: none; color: inherit; flex: 1;"
+                  data-cursor="link"
+                  data-hint="Send email"
+                >
+                  <span class="contact-link-kicker" data-i18n="contact.emailLabel">Email</span>
+                  <span class="contact-link-val">rjverceles1@gmail.com</span>
+                </a>
+                <div class="contact-link-actions">
+                  <button
+                    type="button"
+                    class="copy-email-btn"
+                    id="copy-email-btn"
+                    data-email="rjverceles1@gmail.com"
+                    data-cursor="link"
+                  >
+                    <span id="copy-email-label" data-i18n="contact.copyEmail">Copy email</span>
+                  </button>
+                </div>
+              </div>
+
+              <a
+                href="https://github.com/Rigu3l"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-link-row"
+                data-cursor="link"
+                data-hint="github.com/Rigu3l"
+              >
+                <div class="contact-link-meta">
+                  <span class="contact-link-kicker" data-i18n="contact.githubLabel">GitHub</span>
+                  <span class="contact-link-val">github.com/Rigu3l</span>
+                </div>
+                <svg class="contact-link-icon" aria-hidden="true"><use href="#i-ne"></use></svg>
+              </a>
+
+              <a
+                href="https://rigu3l.github.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-link-row"
+                data-cursor="link"
+                data-hint="rigu3l.github.io"
+              >
+                <div class="contact-link-meta">
+                  <span class="contact-link-kicker" data-i18n="contact.portfolioLabel">Portfolio</span>
+                  <span class="contact-link-val">rigu3l.github.io</span>
+                </div>
+                <svg class="contact-link-icon" aria-hidden="true"><use href="#i-ne"></use></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-right" data-reveal="fade">
+            <div class="brief-card">
+              <h3 class="brief-card-title" data-i18n="form.title">Start a project brief</h3>
+              <form class="brief-form" id="brief-form" novalidate>
+                <!-- Honeypot field -->
+                <div class="brief-hp" aria-hidden="true">
+                  <label for="brief-gotcha">Leave this field empty</label>
+                  <input type="text" id="brief-gotcha" name="_gotcha" tabindex="-1" autocomplete="off" />
+                </div>
+
+                <div class="brief-row-2">
+                  <div class="brief-field">
+                    <label for="brief-name" class="brief-label" data-i18n="form.nameLabel">Your name</label>
+                    <input
+                      type="text"
+                      id="brief-name"
+                      name="name"
+                      class="brief-input"
+                      required
+                      autocomplete="name"
+                      placeholder="Alex Rivera"
+                      data-i18n-attr="placeholder:form.namePlaceholder"
+                      data-fit-line="true"
+                      data-cursor="text"
+                      aria-describedby="brief-name-error"
+                    />
+                    <div class="brief-error" id="brief-name-error" role="alert"></div>
+                  </div>
+
+                  <div class="brief-field">
+                    <label for="brief-email" class="brief-label" data-i18n="form.emailLabel">Your email</label>
+                    <input
+                      type="email"
+                      id="brief-email"
+                      name="email"
+                      class="brief-input"
+                      required
+                      autocomplete="email"
+                      placeholder="alex@company.com"
+                      data-i18n-attr="placeholder:form.emailPlaceholder"
+                      data-fit-line="true"
+                      data-cursor="text"
+                      aria-describedby="brief-email-error"
+                    />
+                    <div class="brief-error" id="brief-email-error" role="alert"></div>
+                  </div>
+                </div>
+
+                <fieldset class="chip-fieldset">
+                  <legend class="brief-label" data-i18n="form.scopeLabel">Scope (optional)</legend>
+                  <div class="chip-row">
+                    <label class="chip-option" data-cursor="link">
+                      <input type="radio" name="scope" value="Web App / System" />
+                      <span class="chip-label" data-i18n="form.scopeWebApp">Web App / System</span>
+                    </label>
+                    <label class="chip-option" data-cursor="link">
+                      <input type="radio" name="scope" value="Dashboard / Portal" />
+                      <span class="chip-label" data-i18n="form.scopeDashboard">Dashboard / Portal</span>
+                    </label>
+                    <label class="chip-option" data-cursor="link">
+                      <input type="radio" name="scope" value="Website / Portfolio" />
+                      <span class="chip-label" data-i18n="form.scopeWebsite">Website / Portfolio</span>
+                    </label>
+                    <label class="chip-option" data-cursor="link">
+                      <input type="radio" name="scope" value="Database & Backend" />
+                      <span class="chip-label" data-i18n="form.scopeDatabase">Database &amp; Backend</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="chip-fieldset">
+                  <legend class="brief-label" data-i18n="form.budgetLabel">Timeline / Scale (optional)</legend>
+                  <div class="chip-row">
+                    <label class="chip-option" data-cursor="link">
+                      <input type="radio" name="budget" value="Small / Sprint" />
+                      <span class="chip-label" data-i18n="form.budgetSmall">Small / Sprint</span>
+                    </label>
+                    <label class="chip-option" data-cursor="link">
+                      <input type="radio" name="budget" value="Full Module" />
+                      <span class="chip-label" data-i18n="form.budgetMedium">Full Module</span>
+                    </label>
+                    <label class="chip-option" data-cursor="link">
+                      <input type="radio" name="budget" value="End-to-End System" />
+                      <span class="chip-label" data-i18n="form.budgetCustom">End-to-End System</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <div class="brief-field">
+                  <label for="brief-message" class="brief-label" data-i18n="form.messageLabel">What are you building?</label>
+                  <textarea
+                    id="brief-message"
+                    name="message"
+                    class="brief-textarea"
+                    rows="4"
+                    required
+                    placeholder="Tell me about the task, the users, and your timeline..."
+                    data-i18n-attr="placeholder:form.messagePlaceholder"
+                    data-cursor="text"
+                    aria-describedby="brief-message-error"
+                  ></textarea>
+                  <div class="brief-error" id="brief-message-error" role="alert"></div>
+                </div>
+
+                <div class="brief-submit-row">
+                  <button type="submit" class="brief-submit-btn" id="brief-submit-btn" data-cursor="link">
+                    <span id="brief-submit-label" data-i18n="form.submit">Send brief</span>
+                    <svg aria-hidden="true"><use href="#i-right"></use></svg>
+                  </button>
+                  <div class="brief-status" id="brief-status" role="status" aria-live="polite"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. FOOTER WORD (#footer) — Warped Display Letters + Credits -->
+      <footer id="footer" class="site-footer">
+        <!-- Hidden SVG displacement filters for each character of RJ VERCLES -->
+        <svg class="svg-sprite" aria-hidden="true">
+          <defs id="footer-warp-defs">
+            <filter id="warp-0"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" result="n" /><feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G" id="warp-disp-0" /></filter>
+            <filter id="warp-1"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" result="n" /><feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G" id="warp-disp-1" /></filter>
+            <filter id="warp-2"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" result="n" /><feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G" id="warp-disp-2" /></filter>
+            <filter id="warp-3"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" result="n" /><feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G" id="warp-disp-3" /></filter>
+            <filter id="warp-4"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" result="n" /><feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G" id="warp-disp-4" /></filter>
+            <filter id="warp-5"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" result="n" /><feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G" id="warp-disp-5" /></filter>
+            <filter id="warp-6"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" result="n" /><feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G" id="warp-disp-6" /></filter>
+            <filter id="warp-7"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" result="n" /><feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G" id="warp-disp-7" /></filter>
+            <filter id="warp-8"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" result="n" /><feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G" id="warp-disp-8" /></filter>
+          </defs>
+        </svg>
+
+        <div class="sheet-container">
+          <p class="footer-lead" data-i18n="footer.lead">Still curious. Still solving.</p>
+
+          <div class="footer-word-wrap" id="footer-word" aria-label="RJ VERCLES">
+            <span class="footer-char" data-warp-idx="0" style="filter: url(#warp-0);">R</span>
+            <span class="footer-char" data-warp-idx="1" style="filter: url(#warp-1);">J</span>
+            <span class="footer-char space" aria-hidden="true">&nbsp;</span>
+            <span class="footer-char" data-warp-idx="2" style="filter: url(#warp-2);">V</span>
+            <span class="footer-char" data-warp-idx="3" style="filter: url(#warp-3);">E</span>
+            <span class="footer-char" data-warp-idx="4" style="filter: url(#warp-4);">R</span>
+            <span class="footer-char" data-warp-idx="5" style="filter: url(#warp-5);">C</span>
+            <span class="footer-char" data-warp-idx="6" style="filter: url(#warp-6);">L</span>
+            <span class="footer-char" data-warp-idx="7" style="filter: url(#warp-7);">E</span>
+            <span class="footer-char" data-warp-idx="8" style="filter: url(#warp-8);">S</span>
+          </div>
+
+          <div class="footer-bottom-bar">
+            <span>© <span id="footer-year">2026</span> Rj Verceles</span>
+            <span data-i18n="footer.built">Built with care in Zambales</span>
+            <a href="#top" class="footer-top-link" id="footer-top-link" data-cursor="link">
+              <span data-i18n="footer.backTop">Back to top</span>
+              <svg aria-hidden="true"><use href="#i-down"></use></svg>
+            </a>
+          </div>
+        </div>
+      </footer>
+
+      <noscript>
+        <div class="noscript-note">
+          JavaScript is disabled. You can still read Rj Verceles's profile, project list, and contact links above, or email rjverceles1@gmail.com directly.
+        </div>
+      </noscript>
     </div>
 
+    <!-- Initial Language Application & Module Entry Points -->
+    <script>
+      if (window.applyLang) window.applyLang();
+    </script>
     <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/cursor.js"></script>
+    <script type="module" src="/src/works.js"></script>
+    <script type="module" src="/src/mesh.js"></script>
+    <script type="module" src="/src/content.js"></script>
+    <script type="module" src="/src/ig-phone.js"></script>
+    <script type="module" src="/src/music.js"></script>
   </body>
 </html>
