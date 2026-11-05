@@ -1,0 +1,128 @@
+{
+ "systems": [
+  {
+   "f": "systems-01.jpg",
+   "w": 900,
+   "h": 1200
+  },
+  {
+   "f": "systems-02.jpg",
+   "w": 1100,
+   "h": 1100
+  },
+  {
+   "f": "systems-03.jpg",
+   "w": 900,
+   "h": 1200
+  },
+  {
+   "f": "systems-04.jpg",
+   "w": 1100,
+   "h": 900
+  },
+  {
+   "f": "systems-05.jpg",
+   "w": 900,
+   "h": 1200
+  },
+  {
+   "f": "systems-06.jpg",
+   "w": 1100,
+   "h": 1100
+  },
+  {
+   "f": "systems-07.jpg",
+   "w": 900,
+   "h": 1200
+  },
+  {
+   "f": "systems-08.jpg",
+   "w": 1100,
+   "h": 900
+  }
+ ],
+ "publishing": [
+  {
+   "f": "publishing-01.jpg",
+   "w": 900,
+   "h": 1200
+  },
+  {
+   "f": "publishing-02.jpg",
+   "w": 1100,
+   "h": 1100
+  },
+  {
+   "f": "publishing-03.jpg",
+   "w": 900,
+   "h": 1200
+  },
+  {
+   "f": "publishing-04.jpg",
+   "w": 1100,
+   "h": 900
+  },
+  {
+   "f": "publishing-05.jpg",
+   "w": 900,
+   "h": 1200
+  },
+  {
+   "f": "publishing-06.jpg",
+   "w": 1100,
+   "h": 1100
+  },
+  {
+   "f": "publishing-07.jpg",
+   "w": 900,
+   "h": 1200
+  },
+  {
+   "f": "publishing-08.jpg",
+   "w": 1100,
+   "h": 900
+  }
+ ],
+ "portfolios": [
+  {
+   "f": "portfolios-01.jpg",
+   "w": 900,
+   "h": 1200
+  },
+  {
+   "f": "portfolios-02.jpg",
+   "w": 1100,
+   "h": 1100
+  },
+  {
+   "f": "portfolios-03.jpg",
+   "w": 900,
+   "h": 1200
+  },
+  {
+   "f": "portfolios-04.jpg",
+   "w": 1100,
+   "h": 900
+  },
+  {
+   "f": "portfolios-05.jpg",
+   "w": 900,
+   "h": 1200
+  },
+  {
+   "f": "portfolios-06.jpg",
+   "w": 1100,
+   "h": 1100
+  },
+  {
+   "f": "portfolios-07.jpg",
+   "w": 900,
+   "h": 1200
+  },
+  {
+   "f": "portfolios-08.jpg",
+   "w": 1100,
+   "h": 900
+  }
+ ]
+}

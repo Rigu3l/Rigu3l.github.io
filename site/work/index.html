@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>All work — Rj Verceles</title>
+  <meta name="description" content="Case studies by Rj Verceles: systems, publishing tools and portfolios.">
+  <meta property="og:title" content="All work — Rj Verceles"><meta property="og:description" content="Case studies by Rj Verceles: systems, publishing tools and portfolios.">
+  <meta property="og:image" content="/assets/meta/og-placeholder.jpg"><meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="/assets/meta/apple-touch-icon.png">
+  <link rel="stylesheet" href="/work/cases.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/" aria-label="Back to the start"><img src="/assets/rj-logo.png" alt="RJ VERCELES" width="720" height="477"></a>
+    <div class="who"><b>Rj Verceles</b><span>full stack developer &amp; web designer</span></div>
+  </header>
+  <main class="work">
+    <div class="work-head grid">
+      <p class="label"><span>(03) Work</span></p>
+      <h1 class="big"><span>All work</span><sup>(06)</sup></h1>
+      <nav class="chips" aria-label="Filter"><button type="button" class="chip on" data-filter="all"><span>All</span></button><button type="button" class="chip" data-filter="systems"><span>Systems</span></button><button type="button" class="chip" data-filter="publishing"><span>Publishing</span></button><button type="button" class="chip" data-filter="portfolios"><span>Portfolios</span></button></nav>
+    </div>
+    <div class="tiles">
+    <a class="tile" href="/work/celcheck/" data-cat="systems">
+      <span class="tile-img"><img src="/assets/cases/celcheck/cover.webp" width="1400" height="1000" alt="CelCheck case cover" loading="lazy" decoding="async" sizes="(max-width: 800px) 100vw, 50vw"></span>
+      <span class="tile-meta"><span class="pill"><span>Case</span></span><b>CelCheck</b><span class="tile-sub"><span>Systems</span> · 2025–2026</span></span>
+    </a>
+    <a class="tile" href="/work/online-clearance/" data-cat="systems">
+      <span class="tile-img"><img src="/assets/cases/online-clearance/cover.webp" width="1400" height="1000" alt="Celtech Online Clearance Dashboard case cover" loading="lazy" decoding="async" sizes="(max-width: 800px) 100vw, 50vw"></span>
+      <span class="tile-meta"><span class="pill"><span>Case</span></span><b>Celtech Online Clearance Dashboard</b><span class="tile-sub"><span>Systems</span> · 2026</span></span>
+    </a>
+    <a class="tile" href="/work/management-department/" data-cat="systems">
+      <span class="tile-img"><img src="/assets/cases/management-department/cover.webp" width="1400" height="1000" alt="Hotel Management Department Module case cover" loading="lazy" decoding="async" sizes="(max-width: 800px) 100vw, 50vw"></span>
+      <span class="tile-meta"><span class="pill"><span>Case</span></span><b>Hotel Management — Management Department Module</b><span class="tile-sub"><span>Systems</span> · 2026</span></span>
+    </a>
+    <a class="tile" href="/work/manuazine/" data-cat="publishing">
+      <span class="tile-img"><img src="/assets/cases/manuazine/cover.webp" width="1400" height="1000" alt="Manuazine case cover" loading="lazy" decoding="async" sizes="(max-width: 800px) 100vw, 50vw"></span>
+      <span class="tile-meta"><span class="pill"><span>Case</span></span><b>Manuazine</b><span class="tile-sub"><span>Publishing</span> · 2026</span></span>
+    </a>
+    <a class="tile" href="/work/arjuwey/" data-cat="portfolios">
+      <span class="tile-img"><img src="/assets/cases/arjuwey/cover.webp" width="1400" height="1000" alt="Arjuwey case cover" loading="lazy" decoding="async" sizes="(max-width: 800px) 100vw, 50vw"></span>
+      <span class="tile-meta"><span class="pill"><span>Case</span></span><b>Arjuwey</b><span class="tile-sub"><span>Portfolios</span> · 2026</span></span>
+    </a>
+    <a class="tile" href="/work/rigu3l-portfolio/" data-cat="portfolios">
+      <span class="tile-img"><img src="/assets/cases/rigu3l-portfolio/cover.webp" width="1400" height="1000" alt="Rigu3l.github.io Portfolio case cover" loading="lazy" decoding="async" sizes="(max-width: 800px) 100vw, 50vw"></span>
+      <span class="tile-meta"><span class="pill"><span>Case</span></span><b>Rigu3l.github.io Portfolio</b><span class="tile-sub"><span>Portfolios</span> · 2026</span></span>
+    </a>
+    </div>
+    <div class="work-foot grid">
+      <a class="back" href="/#work"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3m4-4L3 8l4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span>Back to the site</span></a>
+      <a class="more" href="https://github.com/Rigu3l" target="_blank" rel="noopener"><span>More on GitHub</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+    </div>
+  </main>
+  <script>
+    (function () {
+      var chips = document.querySelectorAll("[data-filter]");
+      chips.forEach(function (c) { c.addEventListener("click", function () {
+        var f = c.dataset.filter; chips.forEach(function (x) { x.classList.toggle("on", x === c); });
+        document.querySelectorAll(".tile").forEach(function (t) { t.hidden = f !== "all" && t.dataset.cat !== f; });
+      }); });
+      document.querySelectorAll("img[loading=lazy]").forEach(function (i) { if (i.complete) i.classList.add("in"); else i.addEventListener("load", function () { i.classList.add("in"); }); });
+    })();
+  </script>
+</body>
+</html>

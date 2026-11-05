@@ -1,0 +1,189 @@
+<!doctype html>
+<!--
+  Rj Verceles — portfolio, built as a 1:1 structural rebuild of helloworlddsgn.com
+  ---------------------------------------------------------------------------
+  Same engine: scroll-driven 3D room, Win95 → 7 → 11 OS sequence, Swiss editorial
+  page, WebGL work tunnel. All copy, cases and imagery are Rj's own.
+  Run `npm run dev` (Vite) or `npm run serve` (plain Python static server).
+-->
+<html lang="en" data-geo="PH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0c18">
+  <!-- keep the import map ahead of every module script (browser + Vite requirement) -->
+  <script type="importmap">
+    { "imports": {
+      "three": "./vendor/three/build/three.module.js",
+      "three/addons/": "./vendor/three/examples/jsm/"
+    } }
+  </script>
+  <script type="module" src="lang.js"></script>
+  <title>Rj Verceles — Full Stack Developer &amp; Web Designer</title>
+  <meta name="description" content="I don't decorate, I solve the task. Full-stack developer and web designer from Olongapo City, Philippines.">
+  <link rel="canonical" href="/" vite-ignore>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Arjuwey">
+  <meta property="og:url" content="/">
+  <meta property="og:title" content="Rj Verceles — Full Stack Developer &amp; Web Designer">
+  <meta property="og:description" content="I don't decorate, I solve the task. Full-stack developer and web designer from Olongapo City, Philippines.">
+  <meta property="og:image" content="assets/meta/og-placeholder.jpg">
+  <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="assets/fonts/jetbrains/jetbrains-mono.css">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" href="assets/meta/favicon-64.png" sizes="64x64">
+  <link rel="apple-touch-icon" href="assets/meta/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="os.css">
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="overrides.css">
+</head>
+<body>
+  <!-- one SVG icon set for the whole site -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-ne" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6"/></symbol>
+    <symbol id="i-redo" viewBox="0 0 24 24"><path d="M19 12a7 7 0 1 1-2.05-4.95M19 4v5h-5"/></symbol>
+  </svg>
+
+  <!-- Loader -->
+  <div class="loader" id="loader" aria-live="polite">
+    <div class="loader-glow" aria-hidden="true"></div>
+    <div class="loader-top"><span id="loader-status">Building the room</span><span>rj_verceles.exe</span></div>
+    <div class="loader-count"><b id="loader-num">0</b>%</div>
+  </div>
+
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="screen" id="screen" hidden></div>
+  <h1 class="sr-only">It all started with a hunger to learn</h1>
+
+  <header class="top">
+    <a class="brand" href="#" id="home" aria-label="Back to the start"><img src="assets/rj-logo.png" alt="RJ VERCELES" width="720" height="477"></a>
+    <div class="who"><b>Rj Verceles</b><span>full stack developer &amp; web designer</span></div>
+    <!-- sound on / off (music.js). Ambient: "Fhloston Paradise Arrival", Mixkit Stock Music Free License -->
+    <button class="snd" id="snd" type="button" aria-pressed="false" aria-label="Turn the sound on">
+      <span class="snd-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="snd-t">sound</span>
+    </button>
+  </header>
+  <button class="skip" id="skip" type="button">Skip the story <svg class="ico" aria-hidden="true"><use href="#i-down"/></svg></button>
+  <p class="hint" id="hint">Scroll to look around <svg class="ico" aria-hidden="true"><use href="#i-down"/></svg></p>
+
+  <!-- Scroll length that drives the camera -->
+  <main class="track" id="track">
+    <section class="chapter" data-chapter="screen"></section>
+    <section class="chapter" data-chapter="room"></section>
+    <section class="chapter" data-chapter="hold"></section>
+    <section class="chapter" data-chapter="modern"></section>
+    <section class="chapter" data-chapter="tech"></section>
+    <section class="chapter" data-chapter="push"></section>
+    <section class="chapter" data-chapter="os"></section>
+    <section class="chapter" data-chapter="dialogs"></section>
+    <section class="chapter" data-chapter="exit"></section>
+    <section class="chapter end" data-chapter="next"></section>
+  </main>
+
+  <!-- ================= after the story: the editorial page ================= -->
+  <div class="content" id="content">
+    <section class="sw sw-about" id="about" aria-labelledby="about-title">
+      <div class="sw-hero"><div class="sw-hero-in">
+        <header class="sw-head sw-grid"><p class="sw-label"><span>(01)</span> About me</p><p class="sw-label sw-r">Full Stack Developer &amp; Web Designer · Olongapo City, Philippines</p></header>
+        <h2 class="sw-big sw-grid" id="about-title" data-split data-early>
+          <span class="ln c1" data-drift="-0.6">Hi,</span>
+          <span class="ln c5" data-drift="0.6">I’m Rj —</span>
+          <span class="ln c2" data-drift="-0.4">developer</span>
+        </h2>
+        <figure class="sw-ig">
+          <a class="ig-stage" href="https://github.com/Rigu3l" target="_blank" rel="noopener" aria-label="GitHub Rigu3l"><canvas class="ig-gl" aria-hidden="true"></canvas><span class="ig-tag" aria-hidden="true">open my GitHub <svg class="ico" aria-hidden="true"><use href="#i-ne"/></svg></span></a>
+          <figcaption><span class="sw-label">GitHub</span><a class="ig-link" href="https://github.com/Rigu3l" target="_blank" rel="noopener">@Rigu3l <svg class="ico" aria-hidden="true"><use href="#i-ne"/></svg></a></figcaption>
+        </figure>
+      </div></div>
+      <div class="sw-rest">
+        <div class="sw-grid sw-intro">
+          <figure class="sw-photo" data-reveal><img src="assets/portrait.jpg" alt="Rj Verceles — portrait placeholder" width="900" height="900" loading="lazy"></figure>
+          <p class="sw-lead" data-split>I build <span class="tile ic ic-creative" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3c.6 4.6 3.4 7.4 8 8-4.6.6-7.4 3.4-8 8-.6-4.6-3.4-7.4-8-8 4.6-.6 7.4-3.4 8-8z" fill="#fff"/></svg></span> systems <span class="tile ic ic-web" aria-hidden="true"><svg viewBox="0 0 32 24"><rect x="4" y="4" width="24" height="16" rx="3" fill="none" stroke="#fff" stroke-width="2.2"/><path d="M4 9h24" stroke="#fff" stroke-width="2.2"/><circle cx="8" cy="6.6" r="1" fill="#fff"/><circle cx="11" cy="6.6" r="1" fill="#fff"/></svg></span>, websites <span class="tile ic ic-motion" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6.5v11l9-5.5z" fill="#fff"/></svg></span> and publishing tools <span class="tile ic ic-brand" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4l2.2 5.2L20 10l-4.3 3.8L17 20l-5-3-5 3 1.3-6.2L4 10l5.8-.8z" fill="#051727"/></svg></span> people actually use. <span class="dim">I don’t decorate. I solve the task.</span></p>
+        </div>
+        <div class="sw-grid sw-note" data-reveal><p>Hi, I’m Rj. I’m a Full Stack Developer and Web Designer from Olongapo City. I don’t decorate websites. I solve the task, so people notice it, and so it works. It started on paper, with sketches and systems drawn by hand, and grew into full-stack work: QR logging, dashboards, and publishing tools people actually use.</p></div>
+        <ul class="sw-stats" aria-label="In short">
+          <li class="sw-grid" data-reveal><b class="sw-num" data-count="4">4</b><span class="sw-label">years of experience</span></li>
+          <li class="sw-grid" data-reveal><b class="sw-num"><span class="since">since</span> <i data-count="2022" data-from="2018">2022</i></b><span class="sw-label">building ever since</span></li>
+        </ul>
+        <p class="sw-quote sw-grid" data-split><span class="ln c1"><span class="q">Still</span> <span class="q q-r">curious.</span></span><span class="ln c5"><span class="q">Still</span> <span class="q q-i">solving.</span></span></p>
+      </div>
+    </section>
+
+    <section class="sw-numbers" id="numbers" aria-labelledby="nums-title">
+      <div class="nums-stage" data-mesh>
+        <div class="nums-track">
+          <div class="nums-intro"><p class="sw-label"><span>(02)</span> In numbers · since 2022</p><h2 class="nums-title" id="nums-title">Done<br>so far</h2></div>
+          <div class="num"><span class="num-i">01</span><b data-count="6">6</b><span class="num-l">projects built</span></div>
+          <div class="num"><span class="num-i">02</span><b data-count="25">25</b><span class="num-l">features in Management Department module</span></div>
+          <div class="num"><span class="num-i">03</span><b data-count="150" data-suffix="+">150+</b><span class="num-l">student records in CelCheck test data</span></div>
+          <div class="num"><span class="num-i">04</span><b data-count="5">5</b><span class="num-l">core tools</span></div>
+          <div class="num"><span class="num-i">05</span><b data-count="40">40</b><span class="num-l">lab PCs tracked in CelCheck</span></div>
+          <div class="num"><span class="num-i">06</span><b data-count="3">3</b><span class="num-l">work chapters</span></div>
+          <div class="num"><span class="num-i">07</span><b>—</b><span class="num-l">clients · placeholder</span></div>
+          <div class="num"><span class="num-i">08</span><b data-count="4">4</b><span class="num-l">years of experience</span></div>
+        </div>
+        <div class="nums-fade" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- (03) Work — scroll-driven WebGL tunnel, one chapter per category -->
+    <section class="works" id="work" aria-labelledby="work-title">
+      <div class="works-stage">
+        <canvas class="works-gl" aria-hidden="true"></canvas>
+        <p class="sw-label works-note"><span>(03)</span> Work</p>
+        <div class="works-copy">
+          <h2 class="works-title" id="work-title">Systems</h2>
+          <p class="works-sub">( QR systems · dashboards )</p>
+          <a class="btn works-btn" href="/work/">View all <svg class="ico" aria-hidden="true"><use href="#i-right"/></svg></a>
+        </div>
+        <nav class="works-dots" aria-label="Work categories">
+          <button type="button" class="on" aria-label="Systems"></button><button type="button" aria-label="Publishing"></button>
+          <button type="button" aria-label="Portfolios"></button>
+        </nav>
+      </div>
+    </section>
+
+    <footer class="sw sw-foot" id="contact" aria-labelledby="cta-title">
+      <header class="sw-head sw-grid"><p class="sw-label"><span>(05)</span> Contact</p><p class="sw-label sw-r">Open for freelance / Collabs</p></header>
+      <h2 class="sw-big sw-grid" id="cta-title" data-split><span class="ln c1" data-drift="-0.8">Let’s work</span><span class="ln c4" data-drift="0.8">together?</span></h2>
+      <ul class="sw-links">
+        <li data-reveal><a class="sw-grid" href="mailto:rjverceles1@gmail.com"><span class="sw-label">01</span><b>Email</b><span class="sw-note">rjverceles1@gmail.com</span><svg class="ico" aria-hidden="true"><use href="#i-ne"/></svg></a></li>
+        <li data-reveal><a class="sw-grid" href="https://github.com/Rigu3l" target="_blank" rel="noopener"><span class="sw-label">02</span><b>GitHub</b><span class="sw-note">github.com/Rigu3l</span><svg class="ico" aria-hidden="true"><use href="#i-ne"/></svg></a></li>
+        <li data-reveal><a class="sw-grid" href="https://www.linkedin.com/in/rj-verceles" target="_blank" rel="noopener"><span class="sw-label">03</span><b>LinkedIn</b><span class="sw-note">linkedin.com/in/rj-verceles</span><svg class="ico" aria-hidden="true"><use href="#i-ne"/></svg></a></li>
+        <li data-reveal><a class="sw-grid" href="https://rigu3l.github.io/" target="_blank" rel="noopener"><span class="sw-label">04</span><b>Portfolio</b><span class="sw-note">rigu3l.github.io</span><svg class="ico" aria-hidden="true"><use href="#i-ne"/></svg></a></li>
+        <li data-reveal><a class="sw-grid" href="https://t.me/asodog" target="_blank" rel="noopener"><span class="sw-label">05</span><b>Telegram</b><span class="sw-note">@asodog</span><svg class="ico" aria-hidden="true"><use href="#i-ne"/></svg></a></li>
+      </ul>
+      <div class="sw-formwrap" data-reveal>
+        <form class="sw-formcard" id="brief" data-mesh aria-labelledby="form-title">
+          <p class="f-sub">I reply within a day</p>
+          <h3 id="form-title" data-fit><span class="ln"><span class="w2">What’s</span> <span class="w2">the task?</span></span></h3>
+          <div class="sw-fields">
+            <label><span class="sw-label">Name <em aria-hidden="true">*</em></span><input type="text" name="name" autocomplete="name" required placeholder="Name *"></label>
+            <label><span class="sw-label">Email <em aria-hidden="true">*</em></span><input type="email" name="email" autocomplete="email" required placeholder="Email *"></label>
+            <input class="hp" type="text" name="hw_trap_x" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <label class="f-wide"><span class="sw-label">Task <em aria-hidden="true">*</em></span><textarea name="task" rows="3" required placeholder="Task: what you need, the timing" aria-label="Task"></textarea></label>
+            <button class="btn btn-ink" type="submit">Send the brief <svg class="ico" aria-hidden="true"><use href="#i-right"/></svg></button>
+          </div>
+          <p class="f-note" aria-live="polite"></p>
+        </form>
+      </div>
+      <div class="sw-end sw-grid"><p class="sw-label">© 2026 Rj Verceles</p><button class="sw-replay" id="replay" type="button">Watch the story again <svg class="ico" aria-hidden="true"><use href="#i-redo"/></svg></button></div>
+      <p class="sw-word" aria-hidden="true">rj_verceles</p>
+    </footer>
+  </div>
+
+  <script type="module" src="main.js"></script>
+  <script type="module" src="cursor.js"></script>
+  <script type="module" src="works.js"></script>
+  <script type="module" src="mesh.js"></script>
+  <script type="module" src="content.js"></script>
+  <script type="module" src="ig-phone.js"></script>
+  <script type="module" src="music.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+/* Small, content-driven additions on top of the 1:1 reference stylesheets.
+   Everything here is additive: no original rule is overridden for layout. */
+
+/* The full positioning paragraph sits under the big display lead, on the same
+   12-column grid and the same 5th-column rule as the rest of the page. */
+.sw-note { margin-top: clamp(26px, 3.2vw, 52px); }
+.sw-note p {
+  grid-column: 5 / -1;
+  margin: 0;
+  padding-left: calc(var(--g) / 2 + 12px);
+  max-width: 76ch;
+  font: 400 clamp(15px, 1.32vw, 20px) / 1.55 "Inter", "Segoe UI", sans-serif;
+  letter-spacing: -.01em;
+  color: var(--ink2);
+}
+
+/* The longer, project-specific stat labels wrap instead of stretching the
+   horizontal numbers track into a single enormous column. */
+.num-l {
+  max-width: min(30vw, 340px);
+  line-height: 1.35;
+  letter-spacing: .1em;
+  text-wrap: balance;
+}
+
+@media (max-width: 800px) {
+  .sw-note { margin-top: 26px; }
+  .sw-note p { grid-column: 1 / -1; padding-left: 0; max-width: none; }
+  .num-l { max-width: 66vw; }
+}
